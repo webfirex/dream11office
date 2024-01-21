@@ -62,8 +62,8 @@ export const CommonLayout = (props: CommonLayoutProps) => {
   return (
     <>
       <Container size="xs" p={0}>
-        <AppShell header={{ height: 40 }} footer={{ height: 50 }} padding={0}>
-          <AppShellHeader bg="red">
+        <AppShell header={{ height: 50 }} footer={{ height: 50 }} padding={0}>
+          <AppShellHeader bg="#a50c0c" maw={'500'}>
             {props.header ?? <CommonHeader />}
           </AppShellHeader>
 
@@ -71,7 +71,7 @@ export const CommonLayout = (props: CommonLayoutProps) => {
             <Stack p="sm">{props.children}</Stack>
           </AppShellMain>
 
-          <AppShellFooter bg="red">
+          <AppShellFooter maw={'500'} bg="#a50c0c">
             <CommonFooter />
           </AppShellFooter>
         </AppShell>

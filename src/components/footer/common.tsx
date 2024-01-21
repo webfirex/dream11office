@@ -1,5 +1,5 @@
 import { Button, Group, Stack, Text } from "@mantine/core";
-import { IconHome, IconBallBaseball } from "@tabler/icons-react";
+import { IconHome, IconBallBaseball, IconUserShare, IconUser } from "@tabler/icons-react";
 import Link from "next/link";
 import { Children } from "react";
 
@@ -14,6 +14,16 @@ const Data = {
       name: "Matches",
       link: "/matches",
       icon: IconBallBaseball,
+    },
+    {
+      name: "Refer",
+      link: "/",
+      icon: IconUserShare,
+    },
+    {
+      name: "Account",
+      link: "/",
+      icon: IconUser,
     },
   ],
 };
