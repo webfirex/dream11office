@@ -1,3 +1,4 @@
+import { Flex } from "@mantine/core";
 import dynamic from "next/dynamic";
 
 const AppShell = dynamic(
@@ -63,15 +64,23 @@ export const CommonLayout = (props: CommonLayoutProps) => {
     <>
       <Container size="xs" p={0}>
         <AppShell header={{ height: 50 }} footer={{ height: 50 }} padding={0}>
-          <AppShellHeader bg="#a50c0c" maw={'500'}>
-            {props.header ?? <CommonHeader />}
+          <AppShellHeader maw={"550"} bg={"#a50c0c"} style={{  
+            position: "fixed",
+            left: "50%",
+            transform: "translateX(-50%)",
+          }}>
+              {props.header ?? <CommonHeader />}
           </AppShellHeader>
 
           <AppShellMain>
             <Stack p="sm">{props.children}</Stack>
           </AppShellMain>
 
-          <AppShellFooter maw={'500'} bg="#a50c0c">
+          <AppShellFooter maw={"550"} bg={"#a50c0c"} style={{  
+            position: "fixed",
+            left: "50%",
+            transform: "translateX(-50%)",
+          }}>
             <CommonFooter />
           </AppShellFooter>
         </AppShell>

@@ -5,10 +5,10 @@ import { Data } from "~/lib/data";
 export const HomeTickerComp = () => {
   return (
     <>
-      <Paper bg="red" py="sm" radius="md">
+      <Paper bg="#a50c0c" py="md" radius="md">
         <Ticker duration={20}>
           {Array.from({ length: 1 }).map((_, i) => (
-            <Text mx="sm" c="white" size="md" fw="bold" key={i}>
+            <Text mx="sm" c="white" size="xs" fw="bold" key={i}>
               {Data.ticker.text}
             </Text>
           ))}
