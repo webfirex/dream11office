@@ -1,5 +1,10 @@
 import { Button, Group, Stack, Text } from "@mantine/core";
-import { IconHome, IconBallBaseball, IconUserShare, IconUser } from "@tabler/icons-react";
+import {
+  IconHome,
+  IconBallBaseball,
+  IconUserShare,
+  IconUser,
+} from "@tabler/icons-react";
 import Link from "next/link";
 import { Children } from "react";
 
@@ -31,7 +36,7 @@ const Data = {
 export const CommonFooter = () => {
   return (
     <>
-      <Group h="100%" justify="space-evenly">
+      <Group h="100%" justify="space-evenly" bg="#a50c0c">
         {Children.toArray(
           Data.links.map((link) => (
             <>
