@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { type StyleProp, type MantineSpacing } from "@mantine/core";
 
 const AppShell = dynamic(
   () => import("@mantine/core").then((mod) => mod.AppShell),
@@ -56,27 +57,24 @@ const CommonFooter = dynamic(
 interface CommonLayoutProps {
   children: React.ReactNode;
   header?: React.ReactNode;
+  p?: StyleProp<MantineSpacing>;
 }
 
 export const CommonLayout = (props: CommonLayoutProps) => {
   return (
     <>
-      <Container size="xs" p={0}>
+      <Container size="xs" p={props.p ?? 0}>
         <AppShell header={{ height: 50 }} footer={{ height: 50 }} padding={0}>
           <AppShellHeader withBorder={false}>
-            <Container h="100%" size="xs">
-              {props.header ?? <CommonHeader />}
-            </Container>
+            {props.header ?? <CommonHeader />}
           </AppShellHeader>
 
           <AppShellMain>
-            <Stack p="sm">{props.children}</Stack>
+            <Stack>{props.children}</Stack>
           </AppShellMain>
 
           <AppShellFooter withBorder={false}>
-            <Container size="xs" h="100%">
-              <CommonFooter />
-            </Container>
+            <CommonFooter />
           </AppShellFooter>
         </AppShell>
       </Container>

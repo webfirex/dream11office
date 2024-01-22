@@ -1,4 +1,4 @@
-type MatchType = {
+export type MatchType = {
   uuid: string;
   banner: string;
   title: string;
@@ -6,19 +6,9 @@ type MatchType = {
   date: string;
   description: string;
   ranks: {
-    1: {
-      prize: string;
-      cost: number;
-    };
-    2: {
-      prize: string;
-      cost: number;
-    };
-    3: {
-      prize: string;
-      cost: number;
-    };
-  };
+    prize: string;
+    cost: number;
+  }[];
 };
 
 type WinnerType = {
@@ -51,24 +41,25 @@ export const Data: DataType = {
     {
       uuid: "hkjqw-qeqwe-qweqwe-asdsad",
       banner: "https://i.imgur.com/1O9m8gF.png",
-      title: "Torneio de CS:GO",
-      subTitle: "Torneio de CS:GO",
-      date: "01/01/2021",
-      description: "Torneio de CS:GO",
-      ranks: {
-        1: {
-          prize: "R$ 500,00",
-          cost: 50,
+      title: "Brisbane vs Adelaide",
+      subTitle: "HEA vs STR",
+      date: "2:10pm 22/1/2024",
+      description:
+        "इस मैच की 1 से लेकर 3 Rank तक आप Booking कर सकते हो। अलग अलग Rank का Booking charges अलग अलग है। आपकी Winnings 100% होगी। ये Booking सीधे Dream 11 office से की जा रही है। आप जो भी Rank Book करोगे उसका Winning amount मैच खत्म होने के बाद सीधे आपके Dream 11 wallet में भेज दिया जायेगा। आप अपने wallet से पैसा सीधे अपने बैंक में Transfer कर सकते है।",
+      ranks: [
+        {
+          prize: "₹1 Crore",
+          cost: 1499,
         },
-        2: {
-          prize: "R$ 300,00",
-          cost: 30,
+        {
+          prize: "₹22 Lakh",
+          cost: 1299,
         },
-        3: {
-          prize: "R$ 200,00",
-          cost: 20,
+        {
+          prize: "₹7.5 Lakh",
+          cost: 999,
         },
-      },
+      ],
     },
   ],
   banner: {

@@ -57,7 +57,7 @@ const HomeTickerComp = dynamic(
 export default function Home() {
   return (
     <>
-      <CommonLayout>
+      <CommonLayout p="md">
         <HomeHeroComp />
 
         <HomeTickerComp />

@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { MatchListComp } from "~/components/match-list-page/list";
 
 const BackHeader = dynamic(
   () => import("~/components/header/back").then((mod) => mod.BackHeader),
@@ -16,23 +17,15 @@ const CommonLayout = dynamic(
 
 const MatchBannerComp = dynamic(
   () =>
-    import("~/components/match-page/banner").then((mod) => mod.MatchBannerComp),
+    import("~/components/match-list-page/banner").then((mod) => mod.MatchBannerComp),
   {
     ssr: false,
   }
 );
-
-const MatchListComp = dynamic(
-  () => import("~/components/match-page/list").then((mod) => mod.MatchListComp),
-  {
-    ssr: false,
-  }
-);
-
 export default function Home() {
   return (
     <>
-      <CommonLayout header={<BackHeader />}>
+      <CommonLayout header={<BackHeader />} p="md">
         <MatchBannerComp />
 
         <MatchListComp />
