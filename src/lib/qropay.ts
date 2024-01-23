@@ -1,9 +1,9 @@
 import fetch from "node-fetch";
 import { z } from "zod";
+import { env } from "~/env";
 
 export class QROPay {
   private static AddOrderParams = z.object({
-    key: z.string(),
     order_id: z.string(),
     amount: z.string(),
     purpose: z.string(),
@@ -12,11 +12,9 @@ export class QROPay {
   });
 
   private static AddOrderResponse = z.object({
-    status: z.enum(["true", "false"]).transform((value) => {
-      return Boolean(value);
-    }),
+    status: z.boolean(),
     msg: z.string(),
-    order_id: z.string().optional(),
+    order_id: z.number().optional(),
     purpose: z.string().optional(),
     payment_url: z.string().optional(),
   });
@@ -29,7 +27,7 @@ export class QROPay {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(params),
+      body: JSON.stringify({ ...params, key: env.QROPAY_KEY }),
     });
 
     const data = (await res.json()) as unknown;

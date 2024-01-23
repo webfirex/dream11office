@@ -35,7 +35,9 @@ export const ViewMatchPrizeComp = (props: { match: MatchType }) => {
             style={{
               cursor: "pointer",
             }}
-            onClick={() => setModalState(props.match)}
+            onClick={() =>
+              setModalState({ match: props.match, rank: rank + 1 })
+            }
           >
             <Flex justify="space-between" h="100%">
               <Flex gap="md" p="md">

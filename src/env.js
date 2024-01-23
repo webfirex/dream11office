@@ -9,8 +9,12 @@ export const env = createEnv({
   server: {
     NODE_ENV: z.enum(["development", "test", "production"]),
 
-    QROPAY_KEY: z.string(),
-    QROPAY_SEC: z.string(),
+    DB_URL: z.string().url().min(1),
+
+    QROPAY_KEY: z.string().min(1),
+    QROPAY_SEC: z.string().min(1),
+
+    WEB_URL: z.string().url().min(1),
   },
 
   /**
@@ -27,6 +31,8 @@ export const env = createEnv({
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
+    WEB_URL: process.env.WEB_URL,
+    DB_URL: process.env.DB_URL,
     QROPAY_KEY: process.env.QROPAY_KEY,
     QROPAY_SEC: process.env.QROPAY_SEC,
     NODE_ENV: process.env.NODE_ENV,
