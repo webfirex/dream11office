@@ -12,7 +12,9 @@ export class QROPay {
   });
 
   private static AddOrderResponse = z.object({
-    status: z.boolean(),
+    status: z.enum(["true", "false"]).transform((value) => {
+      return Boolean(value);
+    }),
     msg: z.string(),
     order_id: z.string().optional(),
     purpose: z.string().optional(),
@@ -24,6 +26,9 @@ export class QROPay {
   ): Promise<z.infer<typeof QROPay.AddOrderResponse>> {
     const res = await fetch("https://qropay.com/api/add_order.php", {
       method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(params),
     });
 
