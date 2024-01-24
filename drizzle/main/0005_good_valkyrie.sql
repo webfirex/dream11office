@@ -1,0 +1,1 @@
+ALTER TABLE "transactions" ALTER COLUMN "match_id" SET DATA TYPE integer;

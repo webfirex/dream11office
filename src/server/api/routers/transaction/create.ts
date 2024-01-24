@@ -4,19 +4,27 @@ import { QROPay } from "~/lib/qropay";
 import { db } from "~/server/database";
 import { Transactions } from "~/server/database/schema";
 import { TRPCError } from "@trpc/server";
-import { Data } from "~/lib/data";
 import { env } from "~/env";
 
 export const TransactionCreateRoute = publicProcedure
   .input(
     z.object({
-      number: z.number(),
-      match_id: z.string(),
+      mobile_number: z.number(),
+      match_id: z.number(),
       rank: z.number(),
     })
   )
-  .mutation(async ({ input }) => {
-    const match = Data.matches.find((match) => match.uuid === input.match_id);
+  .mutation(async ({ input, ctx }) => {
+    const match = await db.query.Matches.findFirst({
+      where: (match, { eq }) => {
+        return eq(match.id, input.match_id);
+      },
+
+      columns: {
+        id: true,
+        ranks: true,
+      },
+    });
 
     if (!match) {
       throw new TRPCError({
@@ -39,6 +47,9 @@ export const TransactionCreateRoute = publicProcedure
       .values({
         amount: rank.cost,
         match_id: input.match_id,
+        phone_number: input.mobile_number.toString(),
+        rank: input.rank,
+        user_id: ctx.userId,
       })
       .returning({
         insertedId: Transactions.id,
@@ -55,14 +66,13 @@ export const TransactionCreateRoute = publicProcedure
 
     const res = await QROPay.AddOrder({
       amount: rank.cost.toString(),
-      customer_email: "rankdom@gmail.com",
+      customer_email: `${input.mobile_number}@dream.com`,
       order_id: DbTran.insertedId.toString(),
       purpose: `Rank ${input.rank} Booking`,
       redirect_url: `${env.WEB_URL}/views/${input.match_id}`,
     });
 
     if (!res.status || !res.payment_url) {
-
       console.log(res);
 
       throw new TRPCError({

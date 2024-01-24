@@ -1,75 +1,51 @@
-import dynamic from "next/dynamic";
+/* eslint-disable react-hooks/exhaustive-deps */
+import { Box, Container, Image } from "@mantine/core";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
-const HomeResultComp = dynamic(
-  () =>
-    import("~/components/home-page/result").then((mod) => mod.HomeResultComp),
-  {
-    ssr: false,
-  }
-);
+export default function Loading() {
+  const router = useRouter();
 
-const HomeMatchesComp = dynamic(
-  () =>
-    import("~/components/home-page/matches").then((mod) => mod.HomeMatchesComp),
-  {
-    ssr: false,
-  }
-);
+  const [View, setView] = useState(
+    <Image src="/intro-vid.gif" h="100vh" alt="Intro Gif" />
+  );
 
-const HomeBannerComp = dynamic(
-  () =>
-    import("~/components/home-page/banner").then((mod) => mod.HomeBannerComp),
-  {
-    ssr: false,
-  }
-);
+  useEffect(() => {
+    setTimeout(() => {
+      setView(
+        <>
+          <Image
+            src="/logo-m.png"
+            h={300}
+            w={300}
+            alt="Goat"
+            fit="contain"
+            style={{
+              position: "absolute",
+              top: "50%",
+              left: "50%",
+              transform: "translate(-50%, -50%)",
+              zIndex: 100,
+              height: "100vh",
+              width: "100vw",
+            }}
+          />
 
-const HomeWinnerComp = dynamic(
-  () =>
-    import("~/components/home-page/winner").then((mod) => mod.HomeWinnerComp),
-  {
-    ssr: false,
-  }
-);
+          <Box className="loading-popup" />
+        </>
+      );
+    }, 2000);
 
-const CommonLayout = dynamic(
-  () => import("~/components/layout/common").then((mod) => mod.CommonLayout),
-  {
-    ssr: false,
-  }
-);
+    setTimeout(() => {
+      void router.push("/app");
+    }, 4500);
+  }, []);
 
-const HomeHeroComp = dynamic(
-  () => import("~/components/home-page/hero").then((mod) => mod.HomeHeroComp),
-  {
-    ssr: false,
-  }
-);
-
-const HomeTickerComp = dynamic(
-  () =>
-    import("~/components/home-page/ticker").then((mod) => mod.HomeTickerComp),
-  {
-    ssr: false,
-  }
-);
-
-export default function Home() {
   return (
     <>
-      <CommonLayout p="md">
-        <HomeHeroComp />
-
-        <HomeTickerComp />
-
-        <HomeWinnerComp />
-
-        <HomeBannerComp />
-
-        <HomeMatchesComp />
-
-        <HomeResultComp />
-      </CommonLayout>
+      <Container size="xs" p={0}>
+        {View}
+      </Container>
     </>
   );
 }

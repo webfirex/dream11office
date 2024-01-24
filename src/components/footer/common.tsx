@@ -12,7 +12,7 @@ const Data = {
   links: [
     {
       name: "Home",
-      link: "/",
+      link: "/app",
       icon: IconHome,
     },
     {

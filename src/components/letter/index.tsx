@@ -108,8 +108,8 @@ export const GurrenteLetterComp = () => {
               <form
                 onSubmit={GurrenteForm.onSubmit((values) => {
                   SubmitApi.mutate({
-                    match_id: ModalState?.match.uuid,
-                    number: values.mobile,
+                    match_id: ModalState?.match.id,
+                    mobile_number: values.mobile,
                     rank: ModalState?.rank,
                   });
                 })}

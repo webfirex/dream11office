@@ -2,7 +2,7 @@ import { AspectRatio, Image, Stack } from "@mantine/core";
 
 export const ViewMatchHeroComp = (props: { banner: string }) => {
   return (
-    <Stack mb={60}>
+    <Stack>
       <AspectRatio ratio={16 / 9}>
         <Image
           src="https://dream11office.com/public/images/matches/banner/x.png"
@@ -15,16 +15,14 @@ export const ViewMatchHeroComp = (props: { banner: string }) => {
       </AspectRatio>
 
       <Image
-        h={120}
-        w={150}
+        w={180}
+        mt={-50}
+        mx="auto"
         src={props.banner}
         alt="Match Banner"
         radius="lg"
         style={{
-          position: "absolute",
-          top: "290px",
-          right: "50%",
-          transform: "translateX(50%)",
+          zIndex: 100,
         }}
       />
     </Stack>

@@ -6,8 +6,8 @@ import { Data } from "~/lib/data";
 export const HomeResultComp = () => {
   return (
     <>
-      <Stack>
-        <Title c="red" order={4}>
+      <Stack pb="md">
+        <Title c="red" order={4} px="md">
           Recent Match Result
         </Title>
 
@@ -17,6 +17,7 @@ export const HomeResultComp = () => {
           height="fit-content"
           slideSize="50%"
           slideGap="xs"
+          align="start"
         >
           {Children.toArray(
             Data.result.map((resultLink) => (

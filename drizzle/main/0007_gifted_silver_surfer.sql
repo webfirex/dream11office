@@ -1,0 +1,1 @@
+ALTER TABLE "visits" ALTER COLUMN "name" SET DEFAULT '';

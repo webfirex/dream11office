@@ -2,8 +2,8 @@ import { Divider, Flex, Image, Paper, Stack, Text, Title } from "@mantine/core";
 import { IconTicket } from "@tabler/icons-react";
 import { useSetAtom } from "jotai";
 import { Children } from "react";
-import { type MatchType } from "~/lib/data";
 import { LetterModal } from "~/lib/jotai";
+import { type MatchType } from "~/lib/type";
 
 const RankImage = (params: { rank: number }) => {
   switch (params.rank) {

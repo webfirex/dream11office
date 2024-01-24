@@ -306,6 +306,13 @@
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.56.0.tgz"
   integrity sha512-gMsVel9D7f2HLkBma9VbtzZRehRogVRfbr++f06nL2vnCGCNlzOD+/MUov/F4p8myyAHspEhVobgjpX64q5m6A==
 
+"@fingerprintjs/fingerprintjs@^4.2.1":
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/@fingerprintjs/fingerprintjs/-/fingerprintjs-4.2.1.tgz#9566803c86cb17bd7b7aeb2ed3abfdd0c8e9ff43"
+  integrity sha512-uW+GVUNTgCXbVPEbgnbf5Aor22e1dyYR0JRwdUiZBaikfxr7KlhV9y0aahA1FB99fEeQVvhCEvTcPIFSYTy9Pw==
+  dependencies:
+    tslib "^2.4.1"
+
 "@floating-ui/core@^1.5.3":
   version "1.5.3"
   resolved "https://registry.npmjs.org/@floating-ui/core/-/core-1.5.3.tgz"
@@ -529,7 +536,7 @@
 
 "@tabler/icons-react@^2.46.0":
   version "2.46.0"
-  resolved "https://registry.npmjs.org/@tabler/icons-react/-/icons-react-2.46.0.tgz"
+  resolved "https://registry.yarnpkg.com/@tabler/icons-react/-/icons-react-2.46.0.tgz#a24cf737687a18cdf1b0e1189ef69462e82dbd89"
   integrity sha512-X8MRxuslIOFqMjAo+GvUZDpjlOwNYNJTuOsHXf/NBvVI6ygqUf0FUNsDLLA5fQ6k6KtRwxMlgGB+eR8ZG1UP0g==
   dependencies:
     "@tabler/icons" "2.46.0"
@@ -2142,6 +2149,13 @@ hasown@^2.0.0:
   resolved "https://registry.yarnpkg.com/heap/-/heap-0.2.7.tgz#1e6adf711d3f27ce35a81fe3b7bd576c2260a8fc"
   integrity sha512-2bsegYkkHO+h/9MGbn6KWcE45cHZgPANo5LXF7EvWdT0yT2EguSVO1nDgU5c8+ZOPwp2vMNa7YFsJhVcDR9Sdg==
 
+hoist-non-react-statics@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
+  integrity sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==
+  dependencies:
+    react-is "^16.7.0"
+
 ignore@^5.2.0, ignore@^5.2.4:
   version "5.3.0"
   resolved "https://registry.npmjs.org/ignore/-/ignore-5.3.0.tgz"
@@ -2655,6 +2669,13 @@ natural-compare@^1.4.0:
   resolved "https://registry.npmjs.org/natural-compare/-/natural-compare-1.4.0.tgz"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
+next-superjson-plugin@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/next-superjson-plugin/-/next-superjson-plugin-0.6.1.tgz#952ab1e79904429baddc287fafd72b4fde2aa9a4"
+  integrity sha512-rhuLUey6+XZY+wUoF8uJNN146mYdkPmeKAmHZvVnCgocIVPwsYvY5qgIZBCCmeyJuEj67qctAdMk0eCXTyLmSw==
+  dependencies:
+    hoist-non-react-statics "^3.3.2"
+
 next-tick@1, next-tick@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.1.0.tgz#1836ee30ad56d67ef281b22bd199f709449b35eb"
@@ -2943,7 +2964,7 @@ react-dom@18.2.0:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
 
-react-is@^16.10.2, react-is@^16.13.1:
+react-is@^16.10.2, react-is@^16.13.1, react-is@^16.7.0:
   version "16.13.1"
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
@@ -3428,7 +3449,7 @@ tsconfig-paths@^3.15.0:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
-tslib@^2.0.0, tslib@^2.1.0, tslib@^2.4.0:
+tslib@^2.0.0, tslib@^2.1.0, tslib@^2.4.0, tslib@^2.4.1:
   version "2.6.2"
   resolved "https://registry.npmjs.org/tslib/-/tslib-2.6.2.tgz"
   integrity sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==

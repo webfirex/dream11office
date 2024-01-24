@@ -1,13 +1,1 @@
-{
-  "version": "5",
-  "dialect": "pg",
-  "entries": [
-    {
-      "idx": 0,
-      "version": "5",
-      "when": 1706036960314,
-      "tag": "0000_wide_vanisher",
-      "breakpoints": true
-    }
-  ]
-}
+{"version":"5","dialect":"pg","entries":[{"idx":0,"version":"5","when":1706036960314,"tag":"0000_wide_vanisher","breakpoints":true},{"idx":1,"version":"5","when":1706109636845,"tag":"0001_rare_nitro","breakpoints":true},{"idx":2,"version":"5","when":1706110044771,"tag":"0002_huge_shinobi_shaw","breakpoints":true},{"idx":3,"version":"5","when":1706111743833,"tag":"0003_happy_ogun","breakpoints":true},{"idx":4,"version":"5","when":1706112168749,"tag":"0004_naive_the_hand","breakpoints":true},{"idx":5,"version":"5","when":1706116448107,"tag":"0005_good_valkyrie","breakpoints":true},{"idx":7,"version":"5","when":1706123703177,"tag":"0007_gifted_silver_surfer","breakpoints":true}]}
