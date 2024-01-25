@@ -5,7 +5,7 @@ export const ViewMatchHeroComp = (props: { banner: string }) => {
     <Stack>
       <AspectRatio ratio={16 / 9}>
         <Image
-          src="https://dream11office.com/public/images/matches/banner/x.png"
+          src="/x.png"
           alt="Header Logo"
           style={{
             borderBottomLeftRadius: "var(--mantine-radius-xl)",

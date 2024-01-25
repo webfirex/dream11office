@@ -1,5 +1,4 @@
 type WinnerType = {
-  prize: string;
   image: string;
   video: string;
 };
@@ -27,7 +26,7 @@ export const Data: DataType = {
     link: "https://telegram.me/brijesh11team",
   },
   matchBanner: {
-    image: "https://dream11office.com/public/images/min-ban-2.png",
+    image: "/min-ban-2.png",
     link: "https://wa.me/+917041508202",
   },
   hero: {
@@ -38,22 +37,16 @@ export const Data: DataType = {
   },
   winners: [
     {
-      prize: "Won 1 Crore",
-      image: "https://picsum.photos/200/300",
-      video:
-        "https://dream11office.com/public/images/results/videos/video_1.mp4",
+      image: "/win3.png",
+      video: "/video_1.mp4",
     },
     {
-      prize: "Won 1 Crore",
-      image: "https://picsum.photos/200/300",
-      video:
-        "https://dream11office.com/public/images/results/videos/video_1.mp4",
+      image: "/win1.png",
+      video: "/video_2.mp4",
     },
     {
-      prize: "Won 1 Crore",
-      image: "https://picsum.photos/200/300",
-      video:
-        "https://dream11office.com/public/images/results/videos/video_1.mp4",
+      image: "/win2.png",
+      video: "/video_3.mp4",
     },
   ],
 };

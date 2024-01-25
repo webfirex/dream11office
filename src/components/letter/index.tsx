@@ -114,7 +114,7 @@ export const GurrenteLetterComp = () => {
 
                   <Image
                     w={150}
-                    src="https://dream11office.com/public/images/stamp-img.png"
+                    src="/stamp-img.png"
                     alt="stamp"
                   />
                 </Flex>

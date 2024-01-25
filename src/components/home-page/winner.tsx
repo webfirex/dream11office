@@ -1,15 +1,6 @@
-import {
-  ActionIcon,
-  Center,
-  Flex,
-  Paper,
-  SimpleGrid,
-  Stack,
-  Text,
-  Title,
-} from "@mantine/core";
+import { Carousel } from "@mantine/carousel";
+import { Image, Stack, Title } from "@mantine/core";
 import { modals } from "@mantine/modals";
-import { IconPlayerPlayFilled } from "@tabler/icons-react";
 import { Children } from "react";
 import { Data } from "~/lib/data";
 
@@ -37,42 +28,31 @@ export const HomeWinnerComp = () => {
           Our Winners
         </Title>
 
-        <SimpleGrid cols={3} spacing="xs">
+        <Carousel
+          withIndicators={false}
+          withControls={false}
+          height="fit-content"
+          slideSize="25%"
+          slideGap="xs"
+          align="start"
+          loop
+        >
           {Children.toArray(
             Data.winners.map((winner) => (
-              <Paper
-                style={{
-                  backgroundImage: `url(${winner.image})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  backgroundRepeat: "no-repeat",
-                }}
-                radius="md"
-                h={150}
-                shadow="xl"
-                onClick={() => VideoModal(winner.video)}
-              >
-                <Center h="72%">
-                  <ActionIcon radius="xl" size="xl">
-                    <IconPlayerPlayFilled />
-                  </ActionIcon>
-                </Center>
-                <Flex
-                  direction="column"
-                  justify="flex-end"
-                  align="center"
-                  wrap="wrap"
-                >
-                  <Paper bg="white" m="xs" px="xs" py={3}>
-                    <Text size="xs" ta="center" fw="bold" c="red">
-                      {winner.prize}
-                    </Text>
-                  </Paper>
-                </Flex>
-              </Paper>
+              <Carousel.Slide>
+                <Image
+                  radius="md"
+                  src={winner.image}
+                  h={200}
+                  w={155}
+                  fit="cover"
+                  alt="winner"
+                  onClick={() => VideoModal(winner.video)}
+                />
+              </Carousel.Slide>
             ))
           )}
-        </SimpleGrid>
+        </Carousel>
       </Stack>
     </>
   );
