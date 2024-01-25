@@ -3,7 +3,7 @@ import {
   IconHome,
   IconBallBaseball,
   IconUserShare,
-  IconUser,
+  IconHeadphones,
 } from "@tabler/icons-react";
 import Link from "next/link";
 import { Children } from "react";
@@ -22,13 +22,13 @@ const Data = {
     },
     {
       name: "Refer",
-      link: "/",
+      link: "/refer",
       icon: IconUserShare,
     },
     {
-      name: "Account",
-      link: "/",
-      icon: IconUser,
+      name: "Support",
+      link: "https://telegram.me/brijesh11team",
+      icon: IconHeadphones,
     },
   ],
 };

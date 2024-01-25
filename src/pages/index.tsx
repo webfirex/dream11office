@@ -49,7 +49,6 @@ export default function Loading() {
         p={0}
         style={{
           backgroundColor: "#fdfcfc",
-          // backgroundColor: "#000",
         }}
       >
         {View}

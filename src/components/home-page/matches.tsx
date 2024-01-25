@@ -72,7 +72,7 @@ export const HomeMatchesComp = () => {
                       <Group grow>
                         <Image
                           radius="md"
-                          h={90}
+                          fit="cover"
                           src={match.banner}
                           alt={match.title}
                         />
@@ -94,8 +94,8 @@ export const HomeMatchesComp = () => {
                             </Text>
                           </Stack>
 
-                          <Button size="compact-xs" radius="md">
-                            <Text size={rem(11)} fw="bold">
+                          <Button size="xs" radius="md">
+                            <Text size="sm" fw="bold">
                               Boost 1st Rank
                             </Text>
                           </Button>

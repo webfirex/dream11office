@@ -14,7 +14,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
 ) {
-  if (req.method !== "GET") {
+  if (req.method !== "POST") {
     res.status(405).json({
       success: false,
       message: "Method Not Allowed",
@@ -22,10 +22,11 @@ export default async function handler(
     return;
   }
 
+  console.log("Request body", req.body);
+
   const BodySchema = z.object({
-    amount: z.string(),
     order_id: z.string().transform((val) => parseInt(val)),
-    paymentAmount: z.string(),
+    paymentAmount: z.string().transform((val) => parseInt(val)),
     status: z.string(),
     secretKey: z.string(),
   });
@@ -33,6 +34,8 @@ export default async function handler(
   const body = BodySchema.safeParse(req.body);
 
   if (!body.success) {
+    console.log("Body schema error", body.error);
+
     res.status(400).json({
       success: false,
       message: "Bad Request",

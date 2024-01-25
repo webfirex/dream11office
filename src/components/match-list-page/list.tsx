@@ -1,9 +1,9 @@
 import {
   Button,
   Divider,
+  Group,
   Image,
   Paper,
-  SimpleGrid,
   Skeleton,
   Stack,
   Text,
@@ -38,45 +38,52 @@ export const MatchListComp = () => {
           }
 
           return (
-            <SimpleGrid cols={2} spacing="xs">
+            <Stack>
               {Children.toArray(
                 ListApi.data.matches.map((match) => (
                   <Paper
-                    p={5}
+                    p="xs"
                     radius="md"
-                    shadow="xl"
+                    withBorder
                     component={Link}
                     href={`/view/${match.id}`}
                   >
-                    <Stack gap={5}>
-                      <Image radius="md" src={match.banner} alt={match.title} />
+                    <Group grow>
+                      <Image
+                        radius="md"
+                        fit="cover"
+                        src={match.banner}
+                        alt={match.title}
+                      />
 
-                      <Text ta="center" fw="bold" size={rem(13)} c="black">
-                        {match.title}
-                      </Text>
-
-                      <Divider color="dark.9" />
-
-                      <Stack gap={3}>
-                        <Text ta="center" size={rem(10)} c="dimmed">
-                          {match.subTitle}
+                      <Stack gap="xs">
+                        <Text ta="center" fw="bold" size={rem(13)} c="black">
+                          {match.title}
                         </Text>
 
-                        <Text size={rem(10)} ta="center" c="dimmed">
-                          {match.date}
-                        </Text>
+                        <Divider color="dark.9" />
+
+                        <Stack gap={3}>
+                          <Text ta="center" size={rem(10)} c="dimmed">
+                            {match.subTitle}
+                          </Text>
+
+                          <Text size={rem(10)} ta="center" c="dimmed">
+                            {match.date}
+                          </Text>
+                        </Stack>
+
+                        <Button size="xs" radius="md">
+                          <Text size="sm" fw="bold">
+                            Boost 1st Rank
+                          </Text>
+                        </Button>
                       </Stack>
-
-                      <Button size="compact-xs" radius="md">
-                        <Text size={rem(11)} fw="bold">
-                          Boost 1st Rank
-                        </Text>
-                      </Button>
-                    </Stack>
+                    </Group>
                   </Paper>
                 ))
               )}
-            </SimpleGrid>
+            </Stack>
           );
         })()}
       </Stack>
