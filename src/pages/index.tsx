@@ -39,7 +39,7 @@ export default function Loading() {
 
     setTimeout(() => {
       void router.push("/app");
-    }, 4500);
+    }, 3500);
   }, []);
 
   return (

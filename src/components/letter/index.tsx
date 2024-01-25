@@ -50,6 +50,7 @@ export const GurrenteLetterComp = () => {
       styles={{
         body: {
           padding: 0,
+          height: "100%",
         },
       }}
       transitionProps={{
@@ -59,8 +60,8 @@ export const GurrenteLetterComp = () => {
       }}
     >
       {ModalState && (
-        <Container size="xs">
-          <Stack>
+        <Container size="xs" p={0} h="100%">
+          <Stack h="100%" gap={0}>
             <BackHeader
               h="50px"
               onBack={() => {
@@ -68,42 +69,56 @@ export const GurrenteLetterComp = () => {
               }}
             />
 
-            <Stack>
-              <Title ta="center" order={2}>
-                GUARANTEE LETTER
-              </Title>
+            <Image src="/letter-head.png" alt="Letter Head" />
 
-              <Text size={rem(10)} ta="left">
-                ONE BKC, Tower A, 12th & 14th Floor, Unit 1201 & 1202 and 1401 &
-                1402, Plot C-66, G Block, Bandra Kurla Complex, Bandra (East),
-                Mumbai 400 051
-              </Text>
+            <Flex
+              direction="column"
+              p="md"
+              justify="space-between"
+              h="100%"
+              mt={-70}
+            >
+              <Stack>
+                <Flex justify="space-between" align="center">
+                  <Image src="/lt-logo.png" h={90} w={90} alt="Letter Head" />
 
-              <Divider color="dark.9" />
+                  <Title ta="center" order={3}>
+                    GUARANTEE LETTER
+                  </Title>
+                </Flex>
 
-              <Text size="xs">Dear, Cricket 11 User,</Text>
-
-              <Text size="xs">
-                Dream 11 Office में आपका हार्दिक स्वागत है, आशा करते है आप
-                स्वस्थ और मस्त होंगे। आप बिना किसी बात की Tension लिए बिना Rank
-                charges pay करके अपनी Rank खुद से बुक कर सकते है। आप जो भी Rank
-                Book करोगे वो Rank आपकी 100% आएगी इस चीज की गारंटी खुद Dream 11
-                लेता है। खुद से टीम लगाओगे या Free Team से खेलोगे तो आपकी 1st
-                Rank कभी भी नही आयेगी। आप अपनी Rank Book करके 1 दिन में ही
-                करोड़पति बन सकते हो।
-              </Text>
-
-              <Flex justify="space-between">
-                <Text size="xs">
-                  Thanks, <br /> Dream 11 office
+                <Text size={rem(10)} ta="left">
+                  ONE BKC, Tower A, 12th & 14th Floor, Unit 1201 & 1202 and 1401
+                  & 1402, Plot C-66, G Block, Bandra Kurla Complex, Bandra
+                  (East), Mumbai 400 051
                 </Text>
 
-                <Image
-                  w={150}
-                  src="https://dream11office.com/public/images/stamp-img.png"
-                  alt="stamp"
-                />
-              </Flex>
+                <Divider color="dark.9" />
+
+                <Text size="xs">Dear, Cricket 11 User,</Text>
+
+                <Text size="xs">
+                  Dream 11 Office में आपका हार्दिक स्वागत है, आशा करते है आप
+                  स्वस्थ और मस्त होंगे। आप बिना किसी बात की Tension लिए बिना
+                  Rank charges pay करके अपनी Rank खुद से बुक कर सकते है। आप जो
+                  भी Rank Book करोगे वो Rank आपकी 100% आएगी इस चीज की गारंटी खुद
+                  Dream 11 लेता है। खुद से टीम लगाओगे या Free Team से खेलोगे तो
+                  आपकी 1st Rank कभी भी नही आयेगी। आप अपनी Rank Book करके 1 दिन
+                  में ही करोड़पति बन सकते हो।
+                </Text>
+
+                <Flex justify="space-between">
+                  <Text size="xs">
+                    Thanks, <br /> Dream 11 office
+                  </Text>
+
+                  <Image
+                    w={150}
+                    src="https://dream11office.com/public/images/stamp-img.png"
+                    alt="stamp"
+                  />
+                </Flex>
+              </Stack>
 
               <form
                 onSubmit={GurrenteForm.onSubmit((values) => {
@@ -129,9 +144,11 @@ export const GurrenteLetterComp = () => {
                   />
 
                   <Button
+                    className="button-continue"
                     size="md"
                     radius="md"
-                    color="green.3"
+                    color="green.8"
+                    disabled={String(GurrenteForm.values.mobile).length !== 10}
                     type="submit"
                     loading={SubmitApi.isLoading}
                   >
@@ -139,7 +156,7 @@ export const GurrenteLetterComp = () => {
                   </Button>
                 </Stack>
               </form>
-            </Stack>
+            </Flex>
           </Stack>
         </Container>
       )}

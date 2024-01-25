@@ -13,11 +13,14 @@ import {
   rem,
 } from "@mantine/core";
 import Link from "next/link";
-import { Children } from "react";
+import { Children, useRef } from "react";
 import { api } from "~/utils/api";
+import Autoplay from "embla-carousel-autoplay";
 
 export const HomeMatchesComp = () => {
   const ListApi = api.match.list.useQuery();
+
+  const autoplay = useRef(Autoplay({ delay: 4000 }));
 
   return (
     <>
@@ -49,29 +52,32 @@ export const HomeMatchesComp = () => {
             <Carousel
               withIndicators={false}
               withControls={false}
-              height={150}
+              plugins={[autoplay.current]}
+              height="fit-content"
               slideSize="100%"
               slideGap="xs"
               align="start"
+              loop
             >
               {Children.toArray(
                 ListApi.data.matches.map((match) => (
                   <Carousel.Slide>
                     <Paper
-                      p={5}
+                      p="xs"
                       radius="md"
-                      shadow="xl"
+                      withBorder
                       component={Link}
                       href={`/view/${match.id}`}
                     >
                       <Group grow>
                         <Image
                           radius="md"
+                          h={90}
                           src={match.banner}
                           alt={match.title}
                         />
 
-                        <Stack>
+                        <Stack gap="xs">
                           <Text ta="center" fw="bold" size={rem(13)} c="black">
                             {match.title}
                           </Text>

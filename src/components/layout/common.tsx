@@ -5,6 +5,8 @@ import {
   type MantineSize,
 } from "@mantine/core";
 import { TelegramDialog } from "../tele-dialog";
+import { LetterModal } from "~/lib/jotai";
+import { useAtomValue } from "jotai";
 
 const AppShell = dynamic(
   () => import("@mantine/core").then((mod) => mod.AppShell),
@@ -67,9 +69,11 @@ interface CommonLayoutProps {
 }
 
 export const CommonLayout = (props: CommonLayoutProps) => {
+  const ModalState = useAtomValue(LetterModal);
+
   return (
     <>
-      <TelegramDialog />
+      {!ModalState && <TelegramDialog />}
       <Container size={props.conSize ?? "xs"} p={props.p ?? 0}>
         <AppShell header={{ height: 50 }} footer={{ height: 50 }} padding={0}>
           <AppShellHeader withBorder={false}>

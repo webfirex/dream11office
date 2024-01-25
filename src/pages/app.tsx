@@ -1,6 +1,7 @@
 import { Skeleton, Stack } from "@mantine/core";
 import { type GetServerSidePropsContext } from "next";
 import dynamic from "next/dynamic";
+import { HomeHeroComp } from "~/components/home-page/hero";
 import { sleep } from "~/lib/functions";
 import { ViewCount } from "~/lib/view-count";
 
@@ -80,22 +81,6 @@ const CommonLayout = dynamic(
   }
 );
 
-const HomeHeroComp = dynamic(
-  async () => {
-    await sleep(LoadDelay);
-
-    return import("~/components/home-page/hero").then(
-      (mod) => mod.HomeHeroComp
-    );
-  },
-  {
-    ssr: false,
-    loading: function Loading() {
-      return <Skeleton h={300} w="100%" />;
-    },
-  }
-);
-
 const HomeTickerComp = dynamic(
   async () => {
     await sleep(LoadDelay);
@@ -138,9 +123,9 @@ export default function App() {
           <HomeBannerComp />
 
           <HomeMatchesComp />
+          
+          <HomeResultComp />
         </Stack>
-
-        <HomeResultComp />
       </CommonLayout>
     </>
   );

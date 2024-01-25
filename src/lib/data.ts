@@ -19,7 +19,11 @@ type DataType = {
     text: string;
   };
   winners: WinnerType[];
-  result: string[];
+  result: {
+    src: string;
+    type: "photo" | "video";
+    thumbnail?: string;
+  }[];
 };
 
 export const Data: DataType = {
@@ -57,9 +61,25 @@ export const Data: DataType = {
         "https://dream11office.com/public/images/results/videos/video_1.mp4",
     },
   ],
+
   result: [
-    "https://dream11office.com/public/images/winnings/win37.png",
-    "https://dream11office.com/public/images/winnings/win37.png",
-    "https://dream11office.com/public/images/winnings/win37.png",
+    {
+      src: "https://dream11office.com/public/images/winnings/win37.png",
+      type: "photo",
+    },
+    {
+      src: "https://dream11office.com/public/images/results/videos/video_1.mp4",
+      type: "video",
+      thumbnail: "https://picsum.photos/200/300",
+    },
+    {
+      src: "https://dream11office.com/public/images/winnings/win37.png",
+      type: "photo",
+    },
+    {
+      src: "https://dream11office.com/public/images/results/videos/video_1.mp4",
+      type: "video",
+      thumbnail: "https://picsum.photos/200/300",
+    },
   ],
 };

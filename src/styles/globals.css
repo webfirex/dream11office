@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+
+  /* min-width: 0; */
 
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -66,5 +66,13 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+
+.button-continue {
+  &:disabled,
+  &[data-disabled] {
+    background-color: var(--mantine-color-green-3);
+    color: var(--mantine-color-white);
   }
 }
