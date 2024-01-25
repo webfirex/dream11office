@@ -45,6 +45,8 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
       subTitle: true,
       title: true,
       ranks: true,
+      endDate: true,
+      startDate: true,
     },
   });
 
