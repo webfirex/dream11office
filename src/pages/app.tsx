@@ -2,6 +2,7 @@ import { Skeleton, Stack } from "@mantine/core";
 import { type GetServerSidePropsContext } from "next";
 import dynamic from "next/dynamic";
 import { HomeHeroComp } from "~/components/home-page/hero";
+import { TelegramDialog } from "~/components/tele-dialog";
 import { sleep } from "~/lib/functions";
 import { ViewCount } from "~/lib/view-count";
 
@@ -112,6 +113,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 export default function App() {
   return (
     <>
+      <TelegramDialog />
       <CommonLayout>
         <Stack p="md">
           <HomeHeroComp />
@@ -123,7 +125,7 @@ export default function App() {
           <HomeBannerComp />
 
           <HomeMatchesComp />
-          
+
           <HomeResultComp />
         </Stack>
       </CommonLayout>

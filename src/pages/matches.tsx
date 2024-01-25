@@ -2,6 +2,7 @@ import { Skeleton } from "@mantine/core";
 import { type GetServerSidePropsContext } from "next";
 import dynamic from "next/dynamic";
 import { BackHeader } from "~/components/header/back";
+import { TelegramDialog } from "~/components/tele-dialog";
 import { sleep } from "~/lib/functions";
 import { ViewCount } from "~/lib/view-count";
 
@@ -19,7 +20,7 @@ const MatchListComp = dynamic(
     ssr: false,
     loading: function Loading() {
       return <Skeleton h={300} w="100%" />;
-    }
+    },
   }
 );
 
@@ -64,6 +65,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 export default function Home() {
   return (
     <>
+      <TelegramDialog />
       <CommonLayout header={<BackHeader />} p="md">
         <MatchBannerComp />
 

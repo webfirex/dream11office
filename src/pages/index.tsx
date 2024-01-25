@@ -7,7 +7,7 @@ export default function Loading() {
   const router = useRouter();
 
   const [View, setView] = useState(
-    <Image src="/intro-vid.gif" h="100vh" alt="Intro Gif" />
+    <Image src="/intro-vid.gif" h="100vh" fit="cover" alt="Intro Gif" />
   );
 
   useEffect(() => {
@@ -44,7 +44,14 @@ export default function Loading() {
 
   return (
     <>
-      <Container size="xs" p={0}>
+      <Container
+        size="xs"
+        p={0}
+        style={{
+          backgroundColor: "#fdfcfc",
+          // backgroundColor: "#000",
+        }}
+      >
         {View}
       </Container>
     </>

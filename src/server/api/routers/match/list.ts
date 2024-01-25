@@ -2,12 +2,15 @@ import { publicProcedure } from "../../trpc";
 import { db } from "~/server/database";
 
 export const MatchListRoute = publicProcedure.query(async () => {
+  const IndiaDate = new Date(
+    new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
+  );
+
   const AllMatches = await db.query.Matches.findMany({
     where: (match, { and, lte, gte }) => {
-      // ISO Date String
       return and(
-        lte(match.startDate, new Date(new Date().toUTCString())),
-        gte(match.endDate, new Date(new Date().toUTCString()))
+        lte(match.startDate, IndiaDate),
+        gte(match.endDate, IndiaDate)
       );
     },
 
@@ -19,6 +22,8 @@ export const MatchListRoute = publicProcedure.query(async () => {
       subTitle: true,
       title: true,
       ranks: true,
+      endDate: true,
+      startDate: true,
     },
   });
 

@@ -19,16 +19,11 @@ type DataType = {
     text: string;
   };
   winners: WinnerType[];
-  result: {
-    src: string;
-    type: "photo" | "video";
-    thumbnail?: string;
-  }[];
 };
 
 export const Data: DataType = {
   banner: {
-    image: "https://dream11office.com/public/images/min-ban-6.png",
+    image: "/min-ban-6.png",
     link: "https://telegram.me/brijesh11team",
   },
   matchBanner: {
@@ -59,27 +54,6 @@ export const Data: DataType = {
       image: "https://picsum.photos/200/300",
       video:
         "https://dream11office.com/public/images/results/videos/video_1.mp4",
-    },
-  ],
-
-  result: [
-    {
-      src: "https://dream11office.com/public/images/winnings/win37.png",
-      type: "photo",
-    },
-    {
-      src: "https://dream11office.com/public/images/results/videos/video_1.mp4",
-      type: "video",
-      thumbnail: "https://picsum.photos/200/300",
-    },
-    {
-      src: "https://dream11office.com/public/images/winnings/win37.png",
-      type: "photo",
-    },
-    {
-      src: "https://dream11office.com/public/images/results/videos/video_1.mp4",
-      type: "video",
-      thumbnail: "https://picsum.photos/200/300",
     },
   ],
 };

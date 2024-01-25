@@ -50,8 +50,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   });
 
   if (!AdminData.success) {
-    console.log(AdminData.error);
-
     return {
       notFound: true,
     };
@@ -136,7 +134,14 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     props: {
       PageVisits,
       Txn: {
-        data: Txn,
+        data: Txn.map((txn) => {
+          return {
+            ...txn,
+            match: txn.match ?? {
+              title: "Deleted Match",
+            },
+          };
+        }),
         count: TxnCount.length,
         page: AdminData.data.page,
         per: AdminData.data.per,
@@ -186,7 +191,7 @@ export default function Admin({
 
   return (
     <>
-      <CommonLayout p="md" conSize="xl">
+      <CommonLayout p="md" containerSize="xl">
         <Stack>
           <Title order={2}>Page Visits</Title>
 

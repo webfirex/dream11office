@@ -37,6 +37,15 @@ export const Transactions = pgTable("transactions", {
     }),
 });
 
+export const ResultTypes = pgEnum("result_type", ["video", "photo"]);
+
+export const Results = pgTable("results", {
+  id: serial("id").primaryKey(),
+  src: varchar("src", { length: 500 }).notNull(),
+  type: ResultTypes("type").notNull(),
+  thumbnail: varchar("thumbnail", { length: 500 }),
+});
+
 export const Matches = pgTable("matches", {
   id: serial("id").primaryKey(),
   banner: varchar("banner", { length: 256 }).notNull(),
