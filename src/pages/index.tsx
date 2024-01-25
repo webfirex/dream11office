@@ -20,6 +20,7 @@ export default function Loading() {
             w={300}
             alt="Goat"
             fit="contain"
+            className="loading-logo"
             style={{
               position: "absolute",
               top: "50%",
