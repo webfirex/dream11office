@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Box, Container, Image } from "@mantine/core";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
@@ -44,6 +45,7 @@ export default function Loading() {
 
   return (
     <>
+      <Link href="/app" prefetch />
       <Container
         size="xs"
         p={0}
