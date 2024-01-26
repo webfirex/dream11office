@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Box, Container, Image } from "@mantine/core";
+import { Center, Container, Image } from "@mantine/core";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -7,12 +7,14 @@ import { useEffect, useState } from "react";
 export default function Loading() {
   const router = useRouter();
 
-  const [View, setView] = useState(
-    <Image src="/intro-vid.gif" h="100vh" fit="cover" alt="Intro Gif" />
-  );
+  const [BgColor, setBgColor] = useState("#fdfcfc");
+
+  const [View, setView] = useState(<Image src="/intro-vid.gif" alt="Goat" />);
 
   useEffect(() => {
     setTimeout(() => {
+      setBgColor("#a50c0c");
+
       setView(
         <>
           <Image
@@ -22,18 +24,7 @@ export default function Loading() {
             alt="Goat"
             fit="contain"
             className="loading-logo"
-            style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-              zIndex: 100,
-              height: "100vh",
-              width: "100vw",
-            }}
           />
-
-          <Box className="loading-popup" />
         </>
       );
     }, 2000);
@@ -50,10 +41,12 @@ export default function Loading() {
         size="xs"
         p={0}
         style={{
-          backgroundColor: "#fdfcfc",
+          backgroundColor: BgColor,
         }}
       >
-        {View}
+        <Center h="100vh" bg="transparent">
+          {View}
+        </Center>
       </Container>
     </>
   );
