@@ -1,14 +1,23 @@
-import { ActionIcon, Center, Paper, Skeleton, Stack, Text, Title } from "@mantine/core";
+import {
+  ActionIcon,
+  AspectRatio,
+  Center,
+  Paper,
+  Stack,
+  Title,
+} from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import { Children, useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { modals } from "@mantine/modals";
 import { IconPlayerPlayFilled } from "@tabler/icons-react";
-import { api } from "~/utils/api";
+import { type RouterOutputs } from "~/utils/api";
 
-export const HomeResultComp = () => {
-  const ListApi = api.match.resultList.useQuery();
+interface HomeResultProps {
+  results: RouterOutputs["match"]["resultList"]["matches"];
+}
 
+export const HomeResultComp = (props: HomeResultProps) => {
   const autoplay = useRef(Autoplay({ delay: 2000 }));
 
   const VideoModal = (link: string) => {
@@ -43,67 +52,52 @@ export const HomeResultComp = () => {
           Last Match Result
         </Title>
 
-        {(() => {
-          if (ListApi.isLoading) {
-            return <Skeleton h={400} w="100%" />;
-          }
+        <Carousel
+          withIndicators={false}
+          withControls={false}
+          height="fit-content"
+          slideSize="50%"
+          slideGap="xs"
+          align="start"
+          loop
+          plugins={[autoplay.current]}
+        >
+          {Children.toArray(
+            props.results.map((resultLink) => (
+              <Carousel.Slide>
+                <AspectRatio ratio={9 / 20}>
+                  <Paper
+                    style={{
+                      backgroundImage: `url(${
+                        resultLink.type === "video"
+                          ? resultLink.thumbnail
+                          : resultLink.src
+                      })`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      backgroundRepeat: "no-repeat",
+                    }}
+                    radius="md"
+                    shadow="xl"
+                    onClick={() => {
+                      if (resultLink.type !== "video") return;
 
-          if (ListApi.isError) {
-            return <Text>Error</Text>;
-          }
-
-          if (ListApi.data.total < 1) {
-            return <Text>No Data</Text>;
-          }
-
-          return (
-            <Carousel
-              withIndicators={false}
-              withControls={false}
-              height="fit-content"
-              slideSize="50%"
-              slideGap="xs"
-              align="start"
-              loop
-              plugins={[autoplay.current]}
-            >
-              {Children.toArray(
-                ListApi.data.matches.map((resultLink) => (
-                  <Carousel.Slide>
-                    <Paper
-                      style={{
-                        backgroundImage: `url(${
-                          resultLink.type === "video"
-                            ? resultLink.thumbnail
-                            : resultLink.src
-                        })`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        backgroundRepeat: "no-repeat",
-                      }}
-                      radius="md"
-                      h={400}
-                      shadow="xl"
-                      onClick={() => {
-                        if (resultLink.type !== "video") return;
-
-                        VideoModal(resultLink.src);
-                      }}
-                    >
-                      {resultLink.type === "video" && (
-                        <Center h="100%">
-                          <ActionIcon radius="xl" size="xl">
-                            <IconPlayerPlayFilled />
-                          </ActionIcon>
-                        </Center>
-                      )}
-                    </Paper>
-                  </Carousel.Slide>
-                ))
-              )}
-            </Carousel>
-          );
-        })()}
+                      VideoModal(resultLink.src);
+                    }}
+                  >
+                    {resultLink.type === "video" && (
+                      <Center h="100%">
+                        <ActionIcon radius="xl" size="xl">
+                          <IconPlayerPlayFilled />
+                        </ActionIcon>
+                      </Center>
+                    )}
+                  </Paper>
+                </AspectRatio>
+              </Carousel.Slide>
+            ))
+          )}
+        </Carousel>
       </Stack>
     </>
   );

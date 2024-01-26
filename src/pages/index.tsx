@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Center, Container, Image } from "@mantine/core";
+import { Center, Image } from "@mantine/core";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -37,17 +37,10 @@ export default function Loading() {
   return (
     <>
       <Link href="/app" prefetch />
-      <Container
-        size="xs"
-        p={0}
-        style={{
-          backgroundColor: BgColor,
-        }}
-      >
-        <Center h="100vh" bg="transparent">
-          {View}
-        </Center>
-      </Container>
+
+      <Center h="100vh" bg={BgColor}>
+        {View}
+      </Center>
     </>
   );
 }

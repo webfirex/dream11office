@@ -1,5 +1,8 @@
 import { Skeleton, Stack } from "@mantine/core";
-import { type GetServerSidePropsContext } from "next";
+import {
+  type InferGetServerSidePropsType,
+  type GetServerSidePropsContext,
+} from "next";
 import dynamic from "next/dynamic";
 import { HomeBannerComp } from "~/components/home-page/banner";
 import { HomeHeroComp } from "~/components/home-page/hero";
@@ -9,6 +12,7 @@ import { HomeTickerComp } from "~/components/home-page/ticker";
 import { HomeWinnerComp } from "~/components/home-page/winner";
 import { TelegramDialog } from "~/components/tele-dialog";
 import { ViewCount } from "~/lib/view-count";
+import { db } from "~/server/database";
 
 const CommonLayout = dynamic(
   () => import("~/components/layout/common").then((mod) => mod.CommonLayout),
@@ -27,12 +31,45 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     name: "Home",
   });
 
+  const IndiaDate = new Date(
+    new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
+  );
+
+  const AllMatches = await db.query.Matches.findMany({
+    where: (match, { and, lte, gte }) => {
+      return and(
+        lte(match.startDate, IndiaDate),
+        gte(match.endDate, IndiaDate)
+      );
+    },
+
+    columns: {
+      banner: true,
+      date: true,
+      description: true,
+      id: true,
+      subTitle: true,
+      title: true,
+      ranks: true,
+      endDate: true,
+      startDate: true,
+    },
+  });
+
+  const AllResults = await db.query.Results.findMany();
+
   return {
-    props: {},
+    props: {
+      AllMatches,
+      AllResults,
+    },
   };
 }
 
-export default function App() {
+export default function App({
+  AllMatches,
+  AllResults,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   return (
     <>
       <TelegramDialog />
@@ -46,9 +83,9 @@ export default function App() {
 
           <HomeBannerComp />
 
-          <HomeMatchesComp />
+          <HomeMatchesComp matches={AllMatches} />
 
-          <HomeResultComp />
+          <HomeResultComp results={AllResults} />
         </Stack>
       </CommonLayout>
     </>
