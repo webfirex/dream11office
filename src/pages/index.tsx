@@ -18,12 +18,13 @@ export default function Loading() {
       setView(
         <>
           <Image
-            src="/logo-m.png"
+            src="/logo-m.webp"
             h={300}
             w={300}
             alt="Goat"
             fit="contain"
             className="loading-logo"
+            loading="eager"
           />
         </>
       );
