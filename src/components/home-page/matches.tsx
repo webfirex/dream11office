@@ -41,7 +41,7 @@ export const HomeMatchesComp = (props: HomeMatchesCompProps) => {
           withControls={false}
           plugins={[autoplay.current]}
           height="fit-content"
-          slideSize="100%"
+          slideSize="30%"
           slideGap="xs"
           align="start"
           loop
@@ -50,13 +50,13 @@ export const HomeMatchesComp = (props: HomeMatchesCompProps) => {
             props.matches.map((match) => (
               <Carousel.Slide>
                 <Paper
-                  p="xs"
+                  p={5}
                   radius="md"
                   withBorder
                   component={Link}
                   href={`/view/${match.id}`}
                 >
-                  <Group grow>
+                  <Stack>
                     <Image
                       radius="md"
                       fit="cover"
@@ -64,7 +64,7 @@ export const HomeMatchesComp = (props: HomeMatchesCompProps) => {
                       alt={match.title}
                     />
 
-                    <Stack gap="xs">
+                    <Stack gap={5}>
                       <Text ta="center" fw="bold" size={rem(13)} c="black">
                         {match.title}
                       </Text>
@@ -81,13 +81,13 @@ export const HomeMatchesComp = (props: HomeMatchesCompProps) => {
                         </Text>
                       </Stack>
 
-                      <Button size="xs" radius="md">
+                      <Button size="compact-xs" radius="sm">
                         <Text size="sm" fw="bold">
                           Boost 1st Rank
                         </Text>
                       </Button>
                     </Stack>
-                  </Group>
+                  </Stack>
                 </Paper>
               </Carousel.Slide>
             ))

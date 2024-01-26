@@ -2,6 +2,7 @@ import {
   ActionIcon,
   AspectRatio,
   Center,
+  Divider,
   Paper,
   Stack,
   Title,
@@ -38,67 +39,62 @@ export const HomeResultComp = (props: HomeResultProps) => {
 
   return (
     <>
-      <Stack py="md">
-        <Title
-          c="red"
-          ta="center"
-          order={4}
-          p="md"
-          style={{
-            borderRadius: "var(--mantine-radius-md)",
-            border: "1px solid var(--mantine-color-red-6)",
-          }}
-        >
-          Last Match Result
-        </Title>
+      <Paper withBorder p="md" radius="lg">
+        <Stack>
+          <Title c="red" ta="center" order={3}>
+            Last Match Result
+          </Title>
 
-        <Carousel
-          withIndicators={false}
-          withControls={false}
-          height="fit-content"
-          slideSize="50%"
-          slideGap="xs"
-          align="start"
-          loop
-          plugins={[autoplay.current]}
-        >
-          {Children.toArray(
-            props.results.map((resultLink) => (
-              <Carousel.Slide>
-                <AspectRatio ratio={9 / 20}>
-                  <Paper
-                    style={{
-                      backgroundImage: `url(${
-                        resultLink.type === "video"
-                          ? resultLink.thumbnail
-                          : resultLink.src
-                      })`,
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                      backgroundRepeat: "no-repeat",
-                    }}
-                    radius="md"
-                    shadow="xl"
-                    onClick={() => {
-                      if (resultLink.type !== "video") return;
+          <Divider color="red" />
 
-                      VideoModal(resultLink.src);
-                    }}
-                  >
-                    {resultLink.type === "video" && (
-                      <Center h="100%">
-                        <ActionIcon radius="xl" size="xl">
-                          <IconPlayerPlayFilled />
-                        </ActionIcon>
-                      </Center>
-                    )}
-                  </Paper>
-                </AspectRatio>
-              </Carousel.Slide>
-            ))
-          )}
-        </Carousel>
-      </Stack>
+          <Carousel
+            withIndicators={false}
+            withControls={false}
+            height="fit-content"
+            slideSize="50%"
+            slideGap="xs"
+            align="start"
+            loop
+            plugins={[autoplay.current]}
+          >
+            {Children.toArray(
+              props.results.map((resultLink) => (
+                <Carousel.Slide>
+                  <AspectRatio ratio={9 / 20}>
+                    <Paper
+                      style={{
+                        backgroundImage: `url(${
+                          resultLink.type === "video"
+                            ? resultLink.thumbnail
+                            : resultLink.src
+                        })`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
+                      }}
+                      radius="md"
+                      shadow="xl"
+                      onClick={() => {
+                        if (resultLink.type !== "video") return;
+
+                        VideoModal(resultLink.src);
+                      }}
+                    >
+                      {resultLink.type === "video" && (
+                        <Center h="100%">
+                          <ActionIcon radius="xl" size="xl">
+                            <IconPlayerPlayFilled />
+                          </ActionIcon>
+                        </Center>
+                      )}
+                    </Paper>
+                  </AspectRatio>
+                </Carousel.Slide>
+              ))
+            )}
+          </Carousel>
+        </Stack>
+      </Paper>
     </>
   );
 };
