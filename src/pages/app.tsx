@@ -42,7 +42,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const cacheData = LocalCache.get<StoredObject>(cacheKey);
 
   if (cacheData) {
-
     console.log("cache hit");
 
     return {
@@ -80,11 +79,14 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   const AllResults = await db.query.Results.findMany();
 
-  LocalCache.set<StoredObject>(cacheKey, {
-    AllMatches,
-    AllResults,
-  });
-
+  LocalCache.set<StoredObject>(
+    cacheKey,
+    {
+      AllMatches,
+      AllResults,
+    },
+    60 * 5
+  );
 
   console.log("cache miss");
 
