@@ -7,16 +7,12 @@ import { useEffect } from "react";
 export default function Loading() {
   const router = useRouter();
 
-  
-
   useEffect(() => {
-    
-
     setTimeout(() => {
       void router.push("/app", undefined, {
         unstable_skipClientCache: true,
       });
-    }, 1000);
+    }, 500);
   }, []);
 
   return (

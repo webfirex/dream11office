@@ -20,9 +20,7 @@ import { ZodError } from "zod";
  * These allow you to access things when processing a request, like the database, the session, etc.
  */
 
-type CreateContextOptions = {
-  userId: string;
-};
+type CreateContextOptions = void;
 
 /**
  * This helper generates the "internals" for a tRPC context. If you need to use it, you can export
@@ -37,7 +35,6 @@ type CreateContextOptions = {
 const createInnerTRPCContext = (_opts: CreateContextOptions) => {
   return {
     // ...other context here
-    userId: _opts.userId,
   };
 };
 
@@ -48,17 +45,7 @@ const createInnerTRPCContext = (_opts: CreateContextOptions) => {
  * @see https://trpc.io/docs/context
  */
 export const createTRPCContext = (_opts: CreateNextContextOptions) => {
-  const { req } = _opts;
-
-  const userId = req.cookies.userId;
-
-  if (!userId) {
-    throw new Error("No userid cookie found");
-  }
-
-  return createInnerTRPCContext({
-    userId,
-  });
+  return createInnerTRPCContext();
 };
 
 /**

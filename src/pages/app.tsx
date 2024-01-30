@@ -11,6 +11,7 @@ import { HomeResultComp } from "~/components/home-page/result";
 import { HomeTickerComp } from "~/components/home-page/ticker";
 import { HomeWinnerComp } from "~/components/home-page/winner";
 import { TelegramDialog } from "~/components/tele-dialog";
+import { HOME_CACHE_KEY } from "~/lib/const";
 import { ViewCount } from "~/lib/view-count";
 import { LocalCache } from "~/server/cache";
 import { db } from "~/server/database";
@@ -37,9 +38,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     AllResults: typeof AllResults;
   };
 
-  const cacheKey = "home-page";
-
-  const cacheData = LocalCache.get<StoredObject>(cacheKey);
+  const cacheData = LocalCache.get<StoredObject>(HOME_CACHE_KEY);
 
   if (cacheData) {
     console.log("cache hit");
@@ -56,7 +55,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
   );
 
-  const AllMatches = await db.query.Matches.findMany({
+  const AllMatchesPromise = db.query.Matches.findMany({
     where: (match, { and, lte, gte }) => {
       return and(
         lte(match.startDate, IndiaDate),
@@ -77,15 +76,20 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     },
   });
 
-  const AllResults = await db.query.Results.findMany();
+  const AllResultsPromise = db.query.Results.findMany();
+
+  const [AllMatches, AllResults] = await Promise.all([
+    AllMatchesPromise,
+    AllResultsPromise,
+  ]);
 
   LocalCache.set<StoredObject>(
-    cacheKey,
+    HOME_CACHE_KEY,
     {
       AllMatches,
       AllResults,
     },
-    60 * 5
+    60 * 60
   );
 
   console.log("cache miss");

@@ -29,7 +29,6 @@ export const Transactions = pgTable("transactions", {
   phone_number: varchar("phone_number", { length: 10 }).notNull(),
   rank: integer("rank").notNull(),
   status: popularityEnum("status").notNull().default("pending"),
-  user_id: varchar("user_id", { length: 256 }).notNull(),
   created_at: timestamp("created_at")
     .notNull()
     .$defaultFn(() => {

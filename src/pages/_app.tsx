@@ -2,15 +2,13 @@ import dynamic from "next/dynamic";
 
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
-import '@mantine/dates/styles.css';
+import "@mantine/dates/styles.css";
 
 import "~/styles/globals.css";
 
 import { type AppProps, type AppType } from "next/app";
 import { createTheme } from "@mantine/core";
 import { api } from "~/utils/api";
-import { useEffect } from "react";
-import FingerprintJS from "@fingerprintjs/fingerprintjs";
 
 const MantineProvider = dynamic(
   () => import("@mantine/core").then((mod) => mod.MantineProvider),
@@ -36,18 +34,6 @@ const theme = createTheme({
 });
 
 const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
-  useEffect(() => {
-    const setFp = async () => {
-      const fp = await FingerprintJS.load();
-
-      const { visitorId } = await fp.get();
-
-      document.cookie = `userId=${visitorId}; path=/`;
-    };
-
-    void setFp();
-  }, []);
-
   return (
     <>
       <Head>

@@ -14,7 +14,7 @@ export const TransactionCreateRoute = publicProcedure
       rank: z.number(),
     })
   )
-  .mutation(async ({ input, ctx }) => {
+  .mutation(async ({ input }) => {
     const match = await db.query.Matches.findFirst({
       where: (match, { eq }) => {
         return eq(match.id, input.match_id);
@@ -49,7 +49,7 @@ export const TransactionCreateRoute = publicProcedure
         match_id: input.match_id,
         phone_number: input.mobile_number.toString(),
         rank: input.rank,
-        user_id: ctx.userId,
+        
       })
       .returning({
         insertedId: Transactions.id,

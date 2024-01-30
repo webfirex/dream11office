@@ -103,7 +103,6 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
       created_at: true,
       phone_number: true,
       rank: true,
-      user_id: true,
     },
 
     limit: AdminData.data.per,
@@ -281,12 +280,6 @@ export default function Admin({
 
                   <Table.Th>
                     <Text ta="center" fw="bold">
-                      User ID
-                    </Text>
-                  </Table.Th>
-
-                  <Table.Th>
-                    <Text ta="center" fw="bold">
                       Phone Number
                     </Text>
                   </Table.Th>
@@ -337,10 +330,6 @@ export default function Admin({
                           <Text ta="center" fw="bold" c="dimmed">
                             {txn.id}
                           </Text>
-                        </Table.Td>
-
-                        <Table.Td>
-                          <Text ta="center">{txn.user_id}</Text>
                         </Table.Td>
 
                         <Table.Td>
