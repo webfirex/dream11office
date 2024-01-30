@@ -73,7 +73,6 @@ export const HomeResultComp = (props: HomeResultProps) => {
                         backgroundRepeat: "no-repeat",
                       }}
                       radius="md"
-                      shadow="xl"
                       onClick={() => {
                         if (resultLink.type !== "video") return;
 

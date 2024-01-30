@@ -12,6 +12,7 @@ import { HomeTickerComp } from "~/components/home-page/ticker";
 import { HomeWinnerComp } from "~/components/home-page/winner";
 import { TelegramDialog } from "~/components/tele-dialog";
 import { ViewCount } from "~/lib/view-count";
+import { LocalCache } from "~/server/cache";
 import { db } from "~/server/database";
 
 const CommonLayout = dynamic(
@@ -30,6 +31,27 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     path: `/app`,
     name: "Home",
   });
+
+  type StoredObject = {
+    AllMatches: typeof AllMatches;
+    AllResults: typeof AllResults;
+  };
+
+  const cacheKey = "home-page";
+
+  const cacheData = LocalCache.get<StoredObject>(cacheKey);
+
+  if (cacheData) {
+
+    console.log("cache hit");
+
+    return {
+      props: {
+        AllMatches: cacheData.AllMatches,
+        AllResults: cacheData.AllResults,
+      },
+    };
+  }
 
   const IndiaDate = new Date(
     new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
@@ -57,6 +79,14 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   });
 
   const AllResults = await db.query.Results.findMany();
+
+  LocalCache.set<StoredObject>(cacheKey, {
+    AllMatches,
+    AllResults,
+  });
+
+
+  console.log("cache miss");
 
   return {
     props: {

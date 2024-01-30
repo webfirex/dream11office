@@ -5,6 +5,7 @@ import {
   Divider,
   Group,
   Image,
+  NumberInput,
   Paper,
   Select,
   SimpleGrid,
@@ -483,7 +484,7 @@ export default function Manage() {
                               )}
                             />
 
-                            <TextInput
+                            <NumberInput
                               label="Cost"
                               leftSection={<>₹</>}
                               minLength={3}
