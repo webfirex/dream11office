@@ -27,7 +27,7 @@ export const HomeMatchesComp = (props: HomeMatchesCompProps) => {
     <>
       <Stack>
         <Group justify="space-between">
-          <Title c="red" fw={"800"} order={4}>
+          <Title c="red" fw={900} order={4}>
             Upcoming Matches
           </Title>
 
@@ -56,7 +56,7 @@ export const HomeMatchesComp = (props: HomeMatchesCompProps) => {
                   component={Link}
                   href={`/view/${match.id}`}
                 >
-                  <Stack>
+                  <Stack gap={"5"}>
                     <Image
                       radius="md"
                       fit="cover"
@@ -64,7 +64,7 @@ export const HomeMatchesComp = (props: HomeMatchesCompProps) => {
                       alt={match.title}
                     />
 
-                    <Stack gap={5}>
+                    <Stack gap={5} p={"0"}>
                       <Text ta="center" fw="bold" size={rem(13)} c="black">
                         {match.title}
                       </Text>
@@ -82,7 +82,7 @@ export const HomeMatchesComp = (props: HomeMatchesCompProps) => {
                       </Stack>
 
                       <Button size="compact-xs" radius="sm">
-                        <Text size="sm" fw="bold">
+                        <Text size="xs" fw="bold" px={"xs"} py={"sm"}>
                           Boost 1st Rank
                         </Text>
                       </Button>

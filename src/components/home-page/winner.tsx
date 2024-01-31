@@ -24,7 +24,7 @@ export const HomeWinnerComp = () => {
   return (
     <>
       <Stack>
-        <Title c="red" fw={"800"} order={4}>
+        <Title c="red" fw={900} order={4}>
           Our Winners
         </Title>
 

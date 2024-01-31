@@ -1,10 +1,4 @@
-import { Button, Group, Stack, Text } from "@mantine/core";
-import {
-  IconHome,
-  IconBallBaseball,
-  IconUserShare,
-  IconHeadphones,
-} from "@tabler/icons-react";
+import { Button, Group, Image, Stack, Text } from "@mantine/core";
 import Link from "next/link";
 import { Children } from "react";
 
@@ -13,22 +7,22 @@ const Data = {
     {
       name: "Home",
       link: "/app",
-      icon: IconHome,
+      icon: "/icons/1.png",
     },
     {
       name: "Matches",
       link: "/matches",
-      icon: IconBallBaseball,
+      icon: "/icons/2.png",
     },
     {
       name: "Refer",
       link: "/refer",
-      icon: IconUserShare,
+      icon: "/icons/3.png",
     },
     {
       name: "Support",
       link: "https://telegram.me/brijesh11team",
-      icon: IconHeadphones,
+      icon: "/icons/4.png",
     },
   ],
 };
@@ -42,7 +36,7 @@ export const CommonFooter = () => {
             <>
               <Button component={Link} href={link.link} variant="transparent">
                 <Stack gap={0} align="center">
-                  <link.icon color="white" stroke={1.5} size={18} />
+                  <Image src={link.icon} w={"23"} />
 
                   <Text size="xs" c="white">
                     {link.name}

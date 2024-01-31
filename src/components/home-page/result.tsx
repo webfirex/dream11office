@@ -41,11 +41,9 @@ export const HomeResultComp = (props: HomeResultProps) => {
     <>
       <Paper withBorder p="md" radius="lg" style={{ boxShadow: "0 0 20px rgba(0,0,0,0.3)" }}>
         <Stack>
-          <Title c="red" ta="center" fw={"800"} order={3}>
+          <Title c="red" ta="center" fw={900} order={3} style={{ borderRadius: "10px", borderBottom: "1px solid #a50c0c", padding: "5px 0 10px 0" }}>
             Last Match Result
           </Title>
-
-          <Divider color="red" />
 
           <Carousel
             withIndicators={false}
