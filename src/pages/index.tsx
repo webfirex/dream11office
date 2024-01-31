@@ -12,7 +12,7 @@ export default function Loading() {
       void router.push("/app", undefined, {
         unstable_skipClientCache: true,
       });
-    }, 500);
+    }, 10);
   }, []);
 
   return (
