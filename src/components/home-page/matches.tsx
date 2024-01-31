@@ -27,12 +27,12 @@ export const HomeMatchesComp = (props: HomeMatchesCompProps) => {
     <>
       <Stack>
         <Group justify="space-between">
-          <Title c="red" order={4}>
+          <Title c="red" fw={"800"} order={4}>
             Upcoming Matches
           </Title>
 
-          <Anchor href="/matches" size="xs">
-            View All -&gt;
+          <Anchor href="/matches" size="xs" c={"blue"}>
+            View All &gt;
           </Anchor>
         </Group>
 

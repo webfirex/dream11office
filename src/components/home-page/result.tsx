@@ -19,7 +19,7 @@ interface HomeResultProps {
 }
 
 export const HomeResultComp = (props: HomeResultProps) => {
-  const autoplay = useRef(Autoplay({ delay: 2000 }));
+  const autoplay = useRef(Autoplay({ delay: 4000 }));
 
   const VideoModal = (link: string) => {
     modals.open({
@@ -39,9 +39,9 @@ export const HomeResultComp = (props: HomeResultProps) => {
 
   return (
     <>
-      <Paper withBorder p="md" radius="lg">
+      <Paper withBorder p="md" radius="lg" style={{ boxShadow: "0 0 20px rgba(0,0,0,0.3)" }}>
         <Stack>
-          <Title c="red" ta="center" order={3}>
+          <Title c="red" ta="center" fw={"800"} order={3}>
             Last Match Result
           </Title>
 
@@ -71,6 +71,7 @@ export const HomeResultComp = (props: HomeResultProps) => {
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         backgroundRepeat: "no-repeat",
+                        boxShadow: "0 0 20px rgba(0,0,0,0.3)"
                       }}
                       radius="md"
                       onClick={() => {

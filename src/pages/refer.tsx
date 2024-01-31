@@ -22,7 +22,7 @@ export default function Home() {
     <>
       <TelegramDialog />
       <CommonLayout header={<BackHeader />} p="md">
-        <Title order={4} c="red">
+        <Title order={4} c="red" fw={"800"}>
             Coming Soon
         </Title>
       </CommonLayout>

@@ -24,7 +24,7 @@ export const HomeWinnerComp = () => {
   return (
     <>
       <Stack>
-        <Title c="red" order={4}>
+        <Title c="red" fw={"800"} order={4}>
           Our Winners
         </Title>
 
@@ -43,8 +43,8 @@ export const HomeWinnerComp = () => {
                 <Image
                   radius="md"
                   src={winner.image}
-                  h={200}
-                  w={155}
+                  h={150}
+                  w={120}
                   fit="cover"
                   alt="winner"
                   onClick={() => VideoModal(winner.video)}
