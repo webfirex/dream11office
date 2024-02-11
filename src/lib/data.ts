@@ -23,11 +23,11 @@ type DataType = {
 export const Data: DataType = {
   banner: {
     image: "/min-ban-6.png",
-    link: "https://telegram.me/brijesh11team",
+    link: "https://t.me/+3FMI1LP_nPZhMmJl",
   },
   matchBanner: {
-    image: "/min-ban-2.png",
-    link: "https://wa.me/+917041508202",
+    image: "/min-ban-6.png",
+    link: "https://t.me/+3FMI1LP_nPZhMmJl",
   },
   hero: {
     videoId: "LcSoZUMQ9yI",

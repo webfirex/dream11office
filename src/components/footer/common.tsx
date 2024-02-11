@@ -21,7 +21,7 @@ const Data = {
     },
     {
       name: "Support",
-      link: "https://telegram.me/brijesh11team",
+      link: "https://t.me/+3FMI1LP_nPZhMmJl",
       icon: "/icons/4.png",
     },
   ],
