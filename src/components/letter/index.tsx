@@ -104,7 +104,10 @@ export const GurrenteLetterComp = () => {
                   भी Rank Book करोगे वो Rank आपकी 100% आएगी इस चीज की गारंटी खुद
                   Dream 11 लेता है। खुद से टीम लगाओगे या Free Team से खेलोगे तो
                   आपकी 1st Rank कभी भी नही आयेगी। आप अपनी Rank Book करके 1 दिन
-                  में ही करोड़पति बन सकते हो।
+                  में ही करोड़पति बन सकते हो। <br />
+                  <b>
+                  Guarantee :- अगर आज के मैच में किसी कारणवश आप नहीं जीत पाते हैं तो मैच खत्म होते ही आपका पैसा INSTANT REFUND हो जाएग
+                  </b>
                 </Text>
 
                 <Flex justify="space-between">

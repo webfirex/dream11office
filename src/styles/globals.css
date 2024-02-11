@@ -85,3 +85,17 @@ body {
     color: var(--mantine-color-white);
   }
 }
+.blink {
+  animation: blink 2s linear infinite;
+}
+@keyframes blink {
+  0% {
+      scale: 0.9;
+  }
+  50% {
+      scale: 1;
+  }
+  100% {
+      scale: 0.9;
+  }
+}

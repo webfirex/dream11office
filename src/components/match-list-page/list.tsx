@@ -57,7 +57,7 @@ export const MatchListComp = () => {
                       />
 
                       <Stack gap="xs">
-                        <Text ta="center" fw="bold" size={rem(13)} c="black">
+                        <Text ta="center" fw="800" size={rem(13)} c="black">
                           {match.title}
                         </Text>
 
