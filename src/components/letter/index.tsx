@@ -98,11 +98,11 @@ export const GurrenteLetterComp = () => {
                 <Text size="xs">Dear, Cricket 11 User,</Text>
 
                 <Text size="xs">
-                  Dream 11 Office में आपका हार्दिक स्वागत है, आशा करते है आप
+                  Cricket 11 Team में आपका हार्दिक स्वागत है, आशा करते है आप
                   स्वस्थ और मस्त होंगे। आप बिना किसी बात की Tension लिए बिना
                   Rank charges pay करके अपनी Rank खुद से बुक कर सकते है। आप जो
                   भी Rank Book करोगे वो Rank आपकी 100% आएगी इस चीज की गारंटी खुद
-                  Dream 11 लेता है। खुद से टीम लगाओगे या Free Team से खेलोगे तो
+                  Cricket 11 लेता है। खुद से टीम लगाओगे या Free Team से खेलोगे तो
                   आपकी 1st Rank कभी भी नही आयेगी। आप अपनी Rank Book करके 1 दिन
                   में ही करोड़पति बन सकते हो। <br />
                   <b>
@@ -112,7 +112,7 @@ export const GurrenteLetterComp = () => {
 
                 <Flex justify="space-between">
                   <Text size="xs">
-                    Thanks, <br /> Dream 11 office
+                    Thanks, <br /> Cricket 11 Team
                   </Text>
 
                   <Image
