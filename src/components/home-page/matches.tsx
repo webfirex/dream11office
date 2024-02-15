@@ -39,7 +39,7 @@ export const HomeMatchesComp = (props: HomeMatchesCompProps) => {
         <Carousel
           withIndicators={false}
           withControls={false}
-          plugins={[autoplay.current]}
+          // plugins={[autoplay.current]}
           height="fit-content"
           slideSize="30%"
           slideGap="xs"

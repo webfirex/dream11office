@@ -37,7 +37,7 @@ const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>Dream 11 Office</title>
+        <title>Cricket 11 Team</title>
         <meta
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
