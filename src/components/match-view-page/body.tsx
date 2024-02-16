@@ -17,7 +17,7 @@ export const ViewMatchBodyComp = (props: {
       <Text fw="bold" size="sm">
         {props.subTitle}
       </Text>
-
+ 
       <Text fw="bold" size="sm">
         {props.date}
       </Text>
