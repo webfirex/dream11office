@@ -98,8 +98,8 @@ export const GurrenteLetterComp = () => {
                 <Text size="xs">
                   <b>Subject:- 100% Winning guarantee</b> <br /><br />
 
-                  Cricket 11 Office में आपका हार्दिक स्वागत है। मुझे पता है सबकी तरह आपका भी सपना होगा 1st Rank जीतकर करोड़पति बनने का तो आप सही जगह आ गए हैं।<br />
-                  Inportant:- जितने सारे लोग 1st Rank में 1 करोड़ जीतते है वो सब इसी Website से Rank Book करते हैं या करवाते हैं।<br />
+                  Cricket 11 Office में आपका हार्दिक स्वागत है। मुझे पता है सबकी तरह आपका भी सपना होगा 1st Rank जीतकर करोड़पति बनने का तो आप सही जगह आ गए हैं।<br /><br />
+                  <b>Important:- जितने सारे लोग 1st Rank में 1 करोड़ जीतते है वो सब इसी Website से Rank Book करते हैं या करवाते हैं।</b><br /><br />
                   आपको cricket 11 के अलावा और कोई दूसरा पूरे Market में 1 करोड़ नही जीता सकता इसलिए Fraud लोगो से दूर रहो।<br />
                   Cricket 11 Office एक Secret Website है यहां से आप 3 महीने में केवल 1 बार ही Rank Book कर सकते हो।<br /><br />
                   <b>
