@@ -88,9 +88,7 @@ export const GurrenteLetterComp = () => {
                 </Flex>
 
                 <Text size={rem(10)} ta="left">
-                  ONE BKC, Tower A, 12th & 14th Floor, Unit 1201 & 1202 and 1401
-                  & 1402, Plot C-66, G Block, Bandra Kurla Complex, Bandra
-                  (East), Mumbai 400 051
+                Office address:- nirmad tower Block-C 912-913 Mira road Mumbai 401107
                 </Text>
 
                 <Divider color="dark.9" />
@@ -98,15 +96,14 @@ export const GurrenteLetterComp = () => {
                 <Text size="xs">Dear, Cricket 11 User,</Text>
 
                 <Text size="xs">
-                  Cricket 11 Team में आपका हार्दिक स्वागत है, आशा करते है आप
-                  स्वस्थ और मस्त होंगे। आप बिना किसी बात की Tension लिए बिना
-                  Rank charges pay करके अपनी Rank खुद से बुक कर सकते है। आप जो
-                  भी Rank Book करोगे वो Rank आपकी 100% आएगी इस चीज की गारंटी खुद
-                  Cricket 11 लेता है। खुद से टीम लगाओगे या Free Team से खेलोगे तो
-                  आपकी 1st Rank कभी भी नही आयेगी। आप अपनी Rank Book करके 1 दिन
-                  में ही करोड़पति बन सकते हो। <br />
+                  Subject:- 100% Winning guarantee <br /><br />
+
+                  Cricket 11 Office में आपका हार्दिक स्वागत है। मुझे पता है सबकी तरह आपका भी सपना होगा 1st Rank जीतकर करोड़पति बनने का तो आप सही जगह आ गए हैं।<br />
+                  Inportant:- जितने सारे लोग 1st Rank में 1 करोड़ जीतते है वो सब इसी Website से Rank Book करते हैं या करवाते हैं।<br />
+                  आपको cricket 11 के अलावा और कोई दूसरा पूरे Market में 1 करोड़ नही जीता सकता इसलिए Fraud लोगो से दूर रहो।<br />
+                  Cricket 11 Office एक Secret Website है यहां से आप 3 महीने में केवल 1 बार ही Rank Book कर सकते हो।<br /><br />
                   <b>
-                  Guarantee :- अगर आज के मैच में किसी कारणवश आप नहीं जीत पाते हैं तो मैच खत्म होते ही आपका पैसा INSTANT REFUND हो जाएग
+                  Guarantee:- यदि आज के मैच में किसी भी कारण आप नही जीते ( जैसे बारिश हो गई और Match Cancel हो गया )तो Match खत्म होते ही आपका पैसा आपके Bank Account में भेज दिया जायेगा।
                   </b>
                 </Text>
 
