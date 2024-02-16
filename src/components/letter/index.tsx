@@ -88,7 +88,7 @@ export const GurrenteLetterComp = () => {
                 </Flex>
 
                 <Text size={rem(10)} ta="left">
-                Office address:- nirmad tower Block-C 912-913 Mira road Mumbai 401107
+                <b>Office address:- nirmad tower Block-C 912-913 Mira road Mumbai 401107</b>
                 </Text>
 
                 <Divider color="dark.9" />
@@ -96,7 +96,7 @@ export const GurrenteLetterComp = () => {
                 <Text size="xs">Dear, Cricket 11 User,</Text>
 
                 <Text size="xs">
-                  Subject:- 100% Winning guarantee <br /><br />
+                  <b>Subject:- 100% Winning guarantee</b> <br /><br />
 
                   Cricket 11 Office में आपका हार्दिक स्वागत है। मुझे पता है सबकी तरह आपका भी सपना होगा 1st Rank जीतकर करोड़पति बनने का तो आप सही जगह आ गए हैं।<br />
                   Inportant:- जितने सारे लोग 1st Rank में 1 करोड़ जीतते है वो सब इसी Website से Rank Book करते हैं या करवाते हैं।<br />
