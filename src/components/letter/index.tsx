@@ -108,8 +108,9 @@ export const GurrenteLetterComp = () => {
                 </Text>
 
                 <Flex justify="space-between">
-                  <Text size="xs">
-                    Thanks, <br /> Cricket 11 Team
+                  <Text size="xs"> <b>
+                    Thanks, Cricket 11 Team <br />
+                    office@cricket11team.com </b>
                   </Text>
 
                   <Image
