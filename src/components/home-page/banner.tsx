@@ -5,7 +5,7 @@ import { Data } from "~/lib/data";
 export const HomeBannerComp = () => {
   return (
     <>
-      <Paper component={Link} href={Data.banner.link}>
+      <Paper component={Link} href={'/prime'}>
         <Image radius="md" src={Data.banner.image} alt="banner" />
       </Paper>
     </>
