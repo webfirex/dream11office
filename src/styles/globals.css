@@ -78,6 +78,19 @@ body {
   }
 }
 
+.analyze {
+  animation: analyze 4.1s 1 forwards;
+}
+
+@keyframes analyze {
+  0% {
+    display: flex;
+  }
+  100% {
+    display: none;
+  }
+}
+
 .button-continue {
   &:disabled,
   &[data-disabled] {

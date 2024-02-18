@@ -17,10 +17,15 @@ import { BackHeader } from "../header/back";
 import { useForm } from "@mantine/form";
 import { api } from "~/utils/api";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 export const GurrenteLetterComp = () => {
   const [ModalState, setModalState] = useAtom(LetterModal);
 
+  
+  const [isVisible, setIsVisible] = useState(true);
+ // Empty dependency array to run this effect only once
+  
   const router = useRouter();
 
   const GurrenteForm = useForm<{
@@ -61,6 +66,11 @@ export const GurrenteLetterComp = () => {
     >
       {ModalState && (
         <Container size="xs" p={0} h="100%">
+          {ModalState && (
+          <section className="analyze fixed flex flex-col bg-white w-full top-0 bottom-0" style={{ minHeight: 'calc(100vh)', position: 'fixed', zIndex: '100000000000', width: '100%', backgroundColor: '#fff' }}>
+            <img src="../analyze.gif" alt="sdf" width={'100%'} />
+          </section>
+          )}
           <Stack h="100%" gap={0}>
             <BackHeader
               h="50px"
