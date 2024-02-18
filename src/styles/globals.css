@@ -79,7 +79,7 @@ body {
 }
 
 .analyze {
-  animation: analyze 4.1s 1 forwards;
+  animation: analyze 4.1s 1 forwards; 
 }
 
 @keyframes analyze {
