@@ -23,6 +23,7 @@ export const GurrenteLetterComp = () => {
   const [ModalState, setModalState] = useAtom(LetterModal);
 
   const [VideoVisible, setVideoVisible] = useState(false);
+  const [UrlToRedirect, setUrlToRedirect] = useState<string | null>(null);
 
   const router = useRouter();
 
@@ -38,10 +39,7 @@ export const GurrenteLetterComp = () => {
   const SubmitApi = api.transaction.create.useMutation({
     onSuccess: (data) => {
       setVideoVisible(true);
-
-      setTimeout(() => {
-        void router.push(data);
-      }, 15000);
+      setUrlToRedirect(data);
     },
     onError: (error) => {
       console.log(error);
@@ -72,13 +70,17 @@ export const GurrenteLetterComp = () => {
             <>
               <video
                 autoPlay
-                loop
                 playsInline
                 src="/vidd.mp4"
                 style={{
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
+                }}
+                onEnded={() => {
+                  if (UrlToRedirect) {
+                    void router.push(UrlToRedirect);
+                  }
                 }}
               />
             </>
