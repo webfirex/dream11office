@@ -41,7 +41,7 @@ export const GurrenteLetterComp = () => {
 
       setTimeout(() => {
         void router.push(data);
-      }, 15500);
+      }, 15000);
     },
     onError: (error) => {
       console.log(error);
@@ -73,9 +73,8 @@ export const GurrenteLetterComp = () => {
               <video
                 autoPlay
                 loop
-                muted
                 playsInline
-                src="/vid.mp4"
+                src="/vidd.mp4"
                 style={{
                   width: "100%",
                   height: "100%",
