@@ -24,8 +24,6 @@ body {
   overflow-x: hidden;
 
   user-select: none;
-
-  user-zoom: "none";
 }
 
 .loading-popup {
