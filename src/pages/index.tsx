@@ -14,7 +14,7 @@ export default function Loading() {
       });
     }, 10);
   }, []);
-
+ 
   return (
     <>
       <Link href="/app" prefetch />
