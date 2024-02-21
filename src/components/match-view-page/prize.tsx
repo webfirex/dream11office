@@ -44,7 +44,7 @@ export const ViewMatchPrizeComp = (props: { match: MatchType }) => {
                 <Image
                   src={RankImage({ rank: rank + 1 })}
                   width={50}
-                  height={50}
+                  height={50} 
                   alt="Rank"
                   my="auto"
                 />
