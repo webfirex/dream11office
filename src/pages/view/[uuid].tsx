@@ -11,6 +11,7 @@ import { ViewMatchBodyComp } from "~/components/match-view-page/body";
 import { ViewMatchHeroComp } from "~/components/match-view-page/hero";
 import { ViewMatchPrizeComp } from "~/components/match-view-page/prize";
 import { ViewCount } from "~/lib/view-count";
+import { Image, Paper } from "@mantine/core";
 import { db } from "~/server/database";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
@@ -94,6 +95,10 @@ export default function ViewMatch({
             date={match.date}
             description={match.description}
           />
+
+      <Paper>
+        <Image radius="md" src={'/banner-offer.png'} alt="banner" />
+      </Paper>
 
           <ViewMatchPrizeComp match={match} />
         </Stack>
