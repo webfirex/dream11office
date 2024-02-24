@@ -1,4 +1,4 @@
-import { Title } from "@mantine/core";
+
 import { type GetServerSidePropsContext } from "next";
 import { BackHeader } from "~/components/header/back";
 import { CommonLayout } from "~/components/layout/common";
