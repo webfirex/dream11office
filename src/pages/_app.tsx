@@ -31,7 +31,7 @@ const Head = dynamic(() => import("next/head"), {
   ssr: false,
 });
 
-const theme = createTheme({
+const theme = createTheme({ 
   primaryColor: "red",
   primaryShade: 9,
 });
