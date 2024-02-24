@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import React, { useEffect } from 'react';
 
 import "@mantine/core/styles.css";
 import "@mantine/carousel/styles.css";
@@ -9,6 +10,8 @@ import "~/styles/globals.css";
 import { type AppProps, type AppType } from "next/app";
 import { createTheme } from "@mantine/core";
 import { api } from "~/utils/api";
+import FacebookPixel from 'react-facebook-pixel';
+
 
 const MantineProvider = dynamic(
   () => import("@mantine/core").then((mod) => mod.MantineProvider),
@@ -34,6 +37,10 @@ const theme = createTheme({
 });
 
 const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
+  useEffect(() => {
+    import('react-facebook-pixel').then((x) => x.init('1369709530340753'));
+  }, []);
+
   return (
     <>
       <Head>
@@ -44,6 +51,7 @@ const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
         />
 
         <link rel="icon" href="/logo.svg" />
+
       </Head>
 
       <MantineProvider theme={theme} defaultColorScheme="light">
