@@ -56,6 +56,7 @@ export const GurrenteLetterComp = () => {
         body: {
           padding: 0,
           height: "100%",
+          overflowY: "scroll"
         },
       }}
       transitionProps={{
