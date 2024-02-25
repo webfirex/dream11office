@@ -18,7 +18,7 @@ const MantineProvider = dynamic(
     ssr: false,
   }
 );
-
+ 
 const ModalsProvider = dynamic(
   () => import("@mantine/modals").then((mod) => mod.ModalsProvider),
   {
