@@ -115,11 +115,11 @@ export default function App({
 
           <HomeTickerComp />
 
-          <HomeWinnerComp />
+          <HomeMatchesComp matches={AllMatches} />
 
           <HomeBannerComp />
 
-          <HomeMatchesComp matches={AllMatches} />
+          <HomeWinnerComp />
 
           <HomeResultComp results={AllResults} />
         </Stack>
