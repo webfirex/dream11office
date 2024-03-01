@@ -37,6 +37,6 @@
     "**/*.cjs",
     "**/*.js",
     ".next/types/**/*.ts"
-, "src/components/pixel.js"  ],
+, "src/components/pixel.js", "src/lib/fpixel.js"  ],
   "exclude": ["node_modules"]
 }
