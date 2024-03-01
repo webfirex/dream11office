@@ -1,7 +1,6 @@
 import dynamic from "next/dynamic";
 import React from 'react';
 import Script from "next/script";
-import * as fbq from "../lib/fpixel";
 
 
 import "@mantine/core/styles.css";
