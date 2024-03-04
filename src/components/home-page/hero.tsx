@@ -1,21 +1,8 @@
-import { AspectRatio } from "@mantine/core";
+import { AspectRatio, Image } from "@mantine/core";
 import { Data } from "~/lib/data";
 
 export const HomeHeroComp = () => {
   return (
-    <AspectRatio ratio={16 / 9}>
-      <iframe
-        width="100%"
-        height="100%"
-        src={`https://www.youtube.com/embed/_AMv36z5tA4?si=RMeY0oyxI-o6AeK_`}
-        frameBorder="0"
-        style={{
-          borderRadius: "var(--mantine-radius-md)",
-        }}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        title="YouTube video player"
-      />
-    </AspectRatio>
-  );
+    <a href="/view/41" className="w-full"><Image src={'https://imagetolink.com/ib/dQRbpYmmZu.png'} className={'w-full'} /></a>
+  )
 };
