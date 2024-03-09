@@ -127,12 +127,12 @@ export const GurrenteLetterComp = () => {
 
                     <Divider color="dark.9" />
 
-                    <Text size="xs">Dear, Cricket 11 User,</Text>
+                    <Text size="xs">Dear, Dream 11 User,</Text>
 
                     <Text size="xs">
                       <b>Subject:- 100% Winning guarantee</b> <br />
                       <br />
-                      Cricket 11 Office में आपका हार्दिक स्वागत है। मुझे पता है
+                      Dream 11 Office में आपका हार्दिक स्वागत है। मुझे पता है
                       सबकी तरह आपका भी सपना होगा 1st Rank जीतकर करोड़पति बनने का
                       तो आप सही जगह आ गए हैं।
                       <br />
@@ -143,10 +143,10 @@ export const GurrenteLetterComp = () => {
                       </b>
                       <br />
                       <br />
-                      आपको cricket 11 के अलावा और कोई दूसरा पूरे Market में 1
+                      आपको Dream 11 के अलावा और कोई दूसरा पूरे Market में 1
                       करोड़ नही जीता सकता इसलिए Fraud लोगो से दूर रहो।
                       <br />
-                      Cricket 11 Office एक Secret Website है यहां से आप 3 महीने
+                      Dream 11 Office एक Secret Website है यहां से आप 3 महीने
                       में केवल 1 बार ही Rank Book कर सकते हो।
                       <br />
                       <br />
@@ -161,8 +161,8 @@ export const GurrenteLetterComp = () => {
                       <Text size="xs">
                         {" "}
                         <b>
-                          Thanks, Cricket 11 Team <br />
-                          office@cricket11team.com{" "}
+                          Thanks, Dream 11 Team <br />
+                          office@dream11headoffice.com{" "}
                         </b>
                       </Text>
 

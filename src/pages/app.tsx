@@ -5,10 +5,10 @@ import {
 } from "next";
 import dynamic from "next/dynamic";
 import { HomeBannerComp } from "~/components/home-page/banner";
+import { HomeBannerComp2 } from "~/components/home-page/banner2";
 import { HomeHeroComp } from "~/components/home-page/hero";
 import { HomeMatchesComp } from "~/components/home-page/matches";
 import { HomeResultComp } from "~/components/home-page/result";
-import { HomeTickerComp } from "~/components/home-page/ticker";
 import { HomeWinnerComp } from "~/components/home-page/winner";
 import { TelegramDialog } from "~/components/tele-dialog";
 import { HOME_CACHE_KEY } from "~/lib/const";
@@ -113,11 +113,11 @@ export default function App({
         <Stack p="md">
           <HomeHeroComp />
 
-          <HomeTickerComp />
+          <HomeBannerComp />
 
           <HomeMatchesComp matches={AllMatches} />
 
-          <HomeBannerComp />
+          <HomeBannerComp2 />
 
           <HomeWinnerComp />
 
