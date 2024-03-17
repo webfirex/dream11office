@@ -18,7 +18,7 @@ export default function Loading() {
   return (
     <>
       <Link href="/app" prefetch />
-
+ 
       <Center h="100vh" bg="#a50c0c">
         <Image
           src="/logo-m.webp"
