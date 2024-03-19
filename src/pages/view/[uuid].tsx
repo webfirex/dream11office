@@ -13,6 +13,8 @@ import { ViewMatchPrizeComp } from "~/components/match-view-page/prize";
 import { ViewCount } from "~/lib/view-count";
 import { Image, Paper } from "@mantine/core";
 import { db } from "~/server/database";
+import RankTimer from "~/components/match-view-page/timer";
+import { useRouter } from "next/router";
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { uuid, client_txn_id } = context.query;
@@ -82,11 +84,21 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 export default function ViewMatch({
   match,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  
+  const router = useRouter();
+
+  // Define an array of allowed paths
+  const allowedPaths = ['/view/[uuid]', '', '/view/49']; // Add more paths as needed
+
+  // Check if the current URL matches any of the allowed paths
+  const isMatchingURL = allowedPaths.includes(router.pathname);
+  
   return (
     <>
       <GurrenteLetterComp />
       <CommonLayout header={<BackHeader />}>
         <ViewMatchHeroComp banner={match.banner} />
+
 
         <Stack p="md">
           <ViewMatchBodyComp
@@ -95,6 +107,9 @@ export default function ViewMatch({
             date={match.date}
             description={match.description}
           />
+          {isMatchingURL && (
+            <RankTimer />
+          )}
 
       <Paper>
         <Image radius="md" src={'/banner-offer.png'} alt="banner" />
