@@ -13,8 +13,35 @@ const RankImage = (params: { rank: number }) => {
     case 2:
       return "/2nd-place.png";
 
-    case 3:
-      return "/3rd-place.png";
+      case 3:
+        return "/3rd-place.png";
+        
+      case 3:
+        return "/3rd-place.png";
+
+      case 4:
+        return "/3rd-place.png";
+        
+      case 5:
+        return "/3rd-place.png";
+
+      case 6:
+        return "/3rd-place.png";
+        
+      case 7:
+        return "/3rd-place.png";
+
+      case 8:
+        return "/3rd-place.png";
+        
+      case 9:
+        return "/3rd-place.png";
+
+      case 10:
+        return "/3rd-place.png";
+
+      case 11:
+        return "/3rd-place.png";
 
     default:
       throw new Error("Invalid rank");
