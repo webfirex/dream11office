@@ -2,7 +2,7 @@ import { Flex, Group, Image, Text, Title } from "@mantine/core";
 
 export default function RankTimer() {
 
-    const ranksA = 11
+    const ranksA = 6
 
     return (
         <Group flex={'column'} bg={'url(/stad-bg.png)'} bgsz={'cover'} bgp={'center bottom'} w={'100%'} px={'20px'} py={'15px'} style={{ 
