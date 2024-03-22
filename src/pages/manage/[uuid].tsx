@@ -126,6 +126,18 @@ export default function Manage() {
           prize: "",
           cost: 0,
         },
+        {
+          prize: "",
+          cost: 0,
+        },
+        {
+          prize: "",
+          cost: 0,
+        },
+        {
+          prize: "",
+          cost: 0,
+        },
       ],
       startDate: new Date(),
     },
