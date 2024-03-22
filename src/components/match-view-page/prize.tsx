@@ -17,31 +17,31 @@ const RankImage = (params: { rank: number }) => {
         return "/3rd-place.png";
         
       case 3:
-        return "/3rd-place.png";
+        return "https://imagetolink.com/ib/KFAMsGYVAw.png";
 
       case 4:
-        return "/3rd-place.png";
+        return "https://imagetolink.com/ib/KFAMsGYVAw.png";
         
       case 5:
-        return "/3rd-place.png";
+        return "https://imagetolink.com/ib/KFAMsGYVAw.png";
 
       case 6:
-        return "/3rd-place.png";
+        return "https://imagetolink.com/ib/KFAMsGYVAw.png";
         
       case 7:
-        return "/3rd-place.png";
+        return "https://imagetolink.com/ib/KFAMsGYVAw.png";
 
       case 8:
-        return "/3rd-place.png";
+        return "https://imagetolink.com/ib/KFAMsGYVAw.png";
         
       case 9:
-        return "/3rd-place.png";
+        return "https://imagetolink.com/ib/KFAMsGYVAw.png";
 
       case 10:
-        return "/3rd-place.png";
+        return "https://imagetolink.com/ib/KFAMsGYVAw.png";
 
       case 11:
-        return "/3rd-place.png";
+        return "https://imagetolink.com/ib/KFAMsGYVAw.png";
 
     default:
       throw new Error("Invalid rank");
@@ -80,7 +80,7 @@ export const ViewMatchPrizeComp = (props: { match: MatchType }) => {
 
                 <Stack gap={0}>
                   <Text size="xs">
-                    {rank + 1}st Prize | {prize.prize}
+                    {rank + 1} Prize | {prize.prize}
                   </Text>
                   <Title order={2}>₹{prize.cost}</Title>
                 </Stack>
