@@ -28,7 +28,7 @@ export default function Loading() {
           fit="contain"
           className="loading-logo"
           loading="eager"
-        />
+        /> 
       </Center>
     </>
   );
