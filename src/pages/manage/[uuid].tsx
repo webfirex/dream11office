@@ -115,7 +115,7 @@ export default function Manage() {
       endDate: new Date(),
       ranks: [
         {
-          prize: "1 Crore",
+          prize: "2 Crore",
           cost: 1999,
         },
         {
@@ -134,30 +134,30 @@ export default function Manage() {
           prize: "1 Crore",
           cost: 1999,
         },
-        {
-          prize: "1 Crore",
-          cost: 1999,
-        },
-        {
-          prize: "1 Crore",
-          cost: 1999,
-        },
-        {
-          prize: "1 Crore",
-          cost: 1999,
-        },
-        {
-          prize: "1 Crore",
-          cost: 1999,
-        },
-        {
-          prize: "1 Crore",
-          cost: 1999,
-        },
-        {
-          prize: "1 Crore",
-          cost: 1999,
-        },
+        // {
+        //   prize: "1 Crore",
+        //   cost: 1999,
+        // },
+        // {
+        //   prize: "1 Crore",
+        //   cost: 1999,
+        // },
+        // {
+        //   prize: "1 Crore",
+        //   cost: 1999,
+        // },
+        // {
+        //   prize: "1 Crore",
+        //   cost: 1999,
+        // },
+        // {
+        //   prize: "1 Crore",
+        //   cost: 1999,
+        // },
+        // {
+        //   prize: "1 Crore",
+        //   cost: 1999,
+        // },
       ],
       startDate: new Date(),
     },
