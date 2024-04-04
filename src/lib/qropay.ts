@@ -4,10 +4,12 @@ import { env } from "~/env";
 
 export class QROPay {
   private static AddOrderParams = z.object({
-    order_id: z.string(),
+    client_txn_id: z.string(),
     amount: z.string(),
-    purpose: z.string(),
+    p_info: z.string(),
+    customer_name: z.string(),
     customer_email: z.string(),
+    customer_mobile: z.string(),
     redirect_url: z.string(),
   });
 
@@ -16,13 +18,14 @@ export class QROPay {
     msg: z.string(),
     order_id: z.number().optional(),
     purpose: z.string().optional(),
+    data: z.any(),
     payment_url: z.string().optional(),
   });
 
   public static async AddOrder(
     params: z.infer<typeof QROPay.AddOrderParams>
   ): Promise<z.infer<typeof QROPay.AddOrderResponse>> {
-    const res = await fetch("https://qropay.com/api/add_order.php", {
+    const res = await fetch("https://api.ekqr.in/api/create_order", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
