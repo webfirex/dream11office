@@ -17,7 +17,7 @@ import { BackHeader } from "../header/back";
 import { useForm } from "@mantine/form";
 import { api } from "~/utils/api";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export const GurrenteLetterComp = () => {
   const [ModalState, setModalState] = useAtom(LetterModal);
@@ -37,7 +37,7 @@ export const GurrenteLetterComp = () => {
   });
 
   const SubmitApi = api.transaction.create.useMutation({
-    onSuccess: (data) => {
+    onSuccess: (data: string) => {
       setVideoVisible(true);
       setUrlToRedirect(data);
     },
