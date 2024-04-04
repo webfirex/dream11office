@@ -18,8 +18,9 @@ export class QROPay {
     msg: z.string(),
     order_id: z.number().optional(),
     purpose: z.string().optional(),
-    data: z.any(),
-    payment_url: z.string(),
+    data: z.object({
+      payment_url: z.string()
+    })
   });
 
   public static async AddOrder(
