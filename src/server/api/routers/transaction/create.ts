@@ -67,14 +67,12 @@ export const TransactionCreateRoute = publicProcedure
     const res = await QROPay.AddOrder({
       amount: rank.cost.toString(),
       customer_email: `${input.mobile_number}@dream.com`,
-      customer_mobile: `${input.mobile_number}`,
-      customer_name: 'John Doe',
-      client_txn_id: DbTran.insertedId.toString(),
-      p_info: `Rank ${input.rank} Booking`,
-      redirect_url: `https://cricket11team.com/views/${input.match_id}`,
+      order_id: DbTran.insertedId.toString(),
+      purpose: `Rank ${input.rank} Booking`,
+      redirect_url: `${env.WEB_URL}/views/${input.match_id}`,
     });
 
-    if (!res.status || !res.data.payment_url) {
+    if (!res.status || !res.payment_url) {
       console.log(res);
 
       throw new TRPCError({
@@ -83,5 +81,5 @@ export const TransactionCreateRoute = publicProcedure
       });
     }
 
-    return res.data.payment_url;
+    return res.payment_url;
   });
