@@ -80,7 +80,7 @@ export const GurrenteLetterComp = () => {
                 }}
                 onEnded={() => {
                   if (UrlToRedirect) {
-                    void router.push(UrlToRedirect);
+                    void router.push('https://cosmofeed.com/vp/6615805018b9030013169ae0');
                   }
                 }}
               />
