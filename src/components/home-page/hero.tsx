@@ -9,4 +9,3 @@ export const HomeHeroComp = () => {
     </Link>
   )
 };
- 
