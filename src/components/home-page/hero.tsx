@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export const HomeHeroComp = () => {
   return (
-    <Link href={'/view/71'} className="w-full">
-      <Image src={'https://imagetolink.com/ib/hK7txaUKJq.png'} className={'w-full'} />
+    <Link href={'/view/72'} className="w-full">
+      <Image src={'https://imagetolink.com/ib/FmnmObmB1v.png'} className={'w-full'} />
     </Link>
   )
 };
