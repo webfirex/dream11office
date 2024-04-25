@@ -115,24 +115,16 @@ export default function Manage() {
       endDate: new Date(),
       ranks: [
         {
-          prize: "2 Crore",
+          prize: "3 Crore",
           cost: 1999,
         },
         {
-          prize: "1 Crore",
-          cost: 1999,
+          prize: "1 lakhs",
+          cost: 1499,
         },
         {
-          prize: "1 Crore",
-          cost: 1999,
-        },
-        {
-          prize: "1 Crore",
-          cost: 1999,
-        },
-        {
-          prize: "1 Crore",
-          cost: 1999,
+          prize: "1 lakhs",
+          cost: 1499,
         },
         // {
         //   prize: "1 Crore",
