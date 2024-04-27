@@ -17,7 +17,7 @@ import { api } from "~/utils/api";
 const MantineProvider = dynamic(
   () => import("@mantine/core").then((mod) => mod.MantineProvider),
   {
-    ssr: false,
+    ssr: false, 
   }
 );
  
