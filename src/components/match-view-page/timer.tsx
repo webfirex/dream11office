@@ -17,7 +17,7 @@ export default function RankTimer() {
             <Flex w={'100%'} direction={'column'} gap={'10px'}>
                 <Flex w={'100%'} direction={'row'} justify={'space-evenly'}>
                     <Text c={'white'}> <b>Ranks Available : </b>{ranksA}</Text>
-                    <Text c={'white'}> <b>Winning Prize : </b>4 Crore</Text>
+                    <Text c={'white'}> <b>Winning Prize : </b>2 Crore</Text>
                 </Flex>
             </Flex>
          </Group>
