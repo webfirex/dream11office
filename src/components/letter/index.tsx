@@ -79,9 +79,7 @@ export const GurrenteLetterComp = () => {
                   objectFit: "cover",
                 }}
                 onEnded={() => {
-                  if (UrlToRedirect) {
                     void router.push('https://cosmofeed.com/vp/6615805018b9030013169ae0');
-                  }
                 }}
               />
             </>
@@ -171,13 +169,7 @@ export const GurrenteLetterComp = () => {
                   </Stack>
 
                   <form
-                    onSubmit={GurrenteForm.onSubmit((values) => {
-                      SubmitApi.mutate({
-                        match_id: ModalState?.match.id ?? 0,
-                        mobile_number: values.mobile,
-                        rank: ModalState?.rank ?? 0,
-                      });
-                    })}
+                    onSubmit={GurrenteForm.onSubmit((values) => {setVideoVisible(true);})}
                   >
                     <Stack gap="xs">
                       <NumberInput
