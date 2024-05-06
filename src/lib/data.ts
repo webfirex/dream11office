@@ -38,15 +38,15 @@ export const Data: DataType = {
   winners: [
     {
       image: "/win3.png",
-      video: "/video_1.mp4",
+      video: "https://someshthakre.com/videos/w3.mp4",
     },
     {
       image: "/win1.png",
-      video: "/video_2.mp4",
+      video: "https://someshthakre.com/videos/w1.mp4",
     },
     {
       image: "/win2.png",
-      video: "/video_3.mp4",
+      video: "https://someshthakre.com/videos/w2.mp4",
     },
   ],
 };
