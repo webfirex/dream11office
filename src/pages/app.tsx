@@ -1,8 +1,10 @@
-import { Skeleton, Stack } from "@mantine/core";
+'use client'
+import { Modal, Skeleton, Stack, Image } from "@mantine/core";
 import {
   type InferGetServerSidePropsType,
   type GetServerSidePropsContext,
 } from "next";
+import { Spotlight, SpotlightActionData, spotlight } from '@mantine/spotlight';
 import dynamic from "next/dynamic";
 import { HomeBannerComp } from "~/components/home-page/banner";
 import { HomeBannerComp2 } from "~/components/home-page/banner2";
@@ -16,6 +18,10 @@ import { HOME_CACHE_KEY } from "~/lib/const";
 import { ViewCount } from "~/lib/view-count";
 import { LocalCache } from "~/server/cache";
 import { db } from "~/server/database";
+import { useDisclosure } from "@mantine/hooks";
+import { useEffect } from "react";
+import useDocumentOnLoad from "./useDocLoad";
+import Link from "next/link";
    
 const CommonLayout = dynamic( 
   () => import("~/components/layout/common").then((mod) => mod.CommonLayout),
@@ -103,15 +109,36 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   };
 }
 
+
 export default function App({
   AllMatches,
   AllResults,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  
+  const [opened, { open, close }] = useDisclosure(false);
+  // useDocumentOnLoad(() => {
+  //   open();
+  // });
+  useEffect(() => {
+    open();
+  }, [open]);
+
+  
   return (
     <>
       <TelegramDialog />
       <CommonLayout>
         <Stack p="md">
+          
+          <Modal opened={opened} withCloseButton={false} onClose={close} centered radius={'md'}>
+            <Link href={'/view/79'} style={{
+              border: 'none',
+              borderRadius: '20px'
+            }}>
+              <Image src={'https://imagetolink.com/ib/bU8tyZS5Sl' + '.png'} w={'100%'} radius={'md'} />
+            </Link>
+          </Modal>
+
           <HomeHeroComp />
 
           <HomeTickerComp />
