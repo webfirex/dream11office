@@ -79,7 +79,7 @@ export const GurrenteLetterComp = () => {
                   objectFit: "cover",
                 }}
                 onEnded={() => {
-                    void router.push('https://cosmofeed.com/vp/6615805018b9030013169ae0');
+                    void router.push('https://cosmofeed.com/vig/6618e2d8fa41b00012e96bf2');
                 }}
               />
             </>
