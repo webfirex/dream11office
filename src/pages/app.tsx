@@ -135,7 +135,7 @@ export default function App({
               border: 'none',
               borderRadius: '20px'
             }}>
-              <Image src={'https://imagetolink.com/ib/kGMcxnUnUv' + '.png'} w={'100%'} radius={'md'} />
+              <Image src={'https://imagetolink.com/ib/jHKKnuZJn2' + '.png'} w={'100%'} radius={'md'} />
             </Link>
           </Modal>
 
