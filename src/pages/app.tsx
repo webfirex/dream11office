@@ -131,11 +131,11 @@ export default function App({
         <Stack p="md">
           
           <Modal opened={opened} withCloseButton={false} onClose={close} centered radius={'md'}>
-            <Link href={'/view/76'} style={{
+            <Link href={'/view/78'} style={{
               border: 'none',
               borderRadius: '20px'
             }}>
-              <Image src={'https://imagetolink.com/ib/4R7vpT7QXm' + '.png'} w={'100%'} radius={'md'} />
+              <Image src={'https://imagetolink.com/ib/CsG1pRVEee' + '.png'} w={'100%'} radius={'md'} />
             </Link>
           </Modal>
 
