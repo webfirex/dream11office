@@ -68,23 +68,7 @@ export const GurrenteLetterComp = () => {
     >
       {ModalState && (
         <Container size="xs" p={0} h="100%">
-          {VideoVisible ? (
-            <>
-              <video
-                autoPlay
-                playsInline
-                src="/vidd.mp4"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
-                onEnded={() => {
-                    void router.push('https://cosmofeed.com/vig/6618e2d8fa41b00012e96bf2');
-                }}
-              />
-            </>
-          ) : (
+          {VideoVisible ? null : (
             <>
               <Stack h="100%" gap={0}>
                 <BackHeader
@@ -170,7 +154,7 @@ export const GurrenteLetterComp = () => {
                   </Stack>
 
                   <form
-                    onSubmit={GurrenteForm.onSubmit((values) => {void router.push('./pay');})}
+                    onSubmit={GurrenteForm.onSubmit((values) => {void router.push('./pay');setVideoVisible(true)})}
                   >
                     <Stack gap="xs">
                       <NumberInput
