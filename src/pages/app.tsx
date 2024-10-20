@@ -135,7 +135,7 @@ export default function App({
               border: 'none',
               borderRadius: '20px'
             }}>
-              <Image src={'https://i.ibb.co/Hq6CJW8/KKR-vs-SRH-800pm-22nd-March-2024-4.png'} w={'100%'} radius={'md'} />
+              <Image src={'https://i.ibb.co/2PgtVT8/cricket11team-2.png'} w={'100%'} radius={'md'} />
             </Link>
           </Modal>
 
