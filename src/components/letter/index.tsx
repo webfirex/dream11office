@@ -38,8 +38,9 @@ export const GurrenteLetterComp = () => {
 
   const SubmitApi = api.transaction.create.useMutation({
     onSuccess: (data: string) => {
-      setVideoVisible(true);
-      setUrlToRedirect(data);
+      // setVideoVisible(true);
+      // setUrlToRedirect(data);
+      void router.push('https://cosmofeed.com/vig/6618e2d8fa41b00012e96bf2');
     },
     onError: (error) => {
       console.log(error);
@@ -169,7 +170,7 @@ export const GurrenteLetterComp = () => {
                   </Stack>
 
                   <form
-                    onSubmit={GurrenteForm.onSubmit((values) => {setVideoVisible(true);})}
+                    onSubmit={GurrenteForm.onSubmit((values) => {void router.push('./pay');})}
                   >
                     <Stack gap="xs">
                       <NumberInput

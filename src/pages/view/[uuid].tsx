@@ -107,9 +107,9 @@ export default function ViewMatch({
             date={match.date}
             description={match.description}
           />
-          {isMatchingURL && (
+          {/* {isMatchingURL && (
             <RankTimer />
-          )}
+          )} */}
 
       <Paper>
         <Image radius="md" src={'/banner-offer.png'} alt="banner" />
