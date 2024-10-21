@@ -130,14 +130,14 @@ export default function App({
       <CommonLayout>
         <Stack p="md">
           
-          <Modal opened={opened} withCloseButton={false} onClose={close} centered radius={'md'}>
+          {/* <Modal opened={opened} withCloseButton={false} onClose={close} centered radius={'md'}>
             <Link href={'/view/81'} style={{
               border: 'none',
               borderRadius: '20px'
             }}>
               <Image src={'https://i.ibb.co/2PgtVT8/cricket11team-2.png'} w={'100%'} radius={'md'} />
             </Link>
-          </Modal>
+          </Modal> */}
 
           <HomeHeroComp />
 

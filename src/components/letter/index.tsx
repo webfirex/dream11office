@@ -154,7 +154,7 @@ export const GurrenteLetterComp = () => {
                   </Stack>
 
                   <form
-                    onSubmit={GurrenteForm.onSubmit((values) => {void router.push('./pay');setVideoVisible(true)})}
+                    onSubmit={GurrenteForm.onSubmit((values) => {setVideoVisible(true);setModalState(null);void router.push('./pay');})}
                   >
                     <Stack gap="xs">
                       <NumberInput
