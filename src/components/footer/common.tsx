@@ -21,7 +21,7 @@ const Data = {
     },
     {
       name: "Support",
-      link: "https://t.me/+3FMI1LP_nPZhMmJl",
+      link: "tel:8866076264",
       icon: "/icons/4.png",
     },
   ],
