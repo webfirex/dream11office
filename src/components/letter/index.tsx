@@ -156,7 +156,7 @@ export const GurrenteLetterComp = () => {
                   </Stack>
 
                   <form
-                    onSubmit={GurrenteForm.onSubmit((values) => {setVideoVisible(true);setModalState(null);router.push(ModalState?.rank === 1
+                    onSubmit={GurrenteForm.onSubmit((values) => {setVideoVisible(true);setModalState(null);void router.push(ModalState?.rank === 1
                       ? 'https://cricket11team.rpy.club/lm/jAdMZUibNq'
                       : ModalState?.rank === 2
                       ? 'https://cricket11team.rpy.club/lm/dUiglpsMD4'
