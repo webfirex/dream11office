@@ -21,6 +21,9 @@ import React, { useState } from "react";
 
 export const GurrenteLetterComp = () => {
   const [ModalState, setModalState] = useAtom(LetterModal);
+  const [RedirectLink, setRedirectLink] = useState<string>('https://cricket11team.rpy.club/lm/DES2G8BFuA');
+
+  if (ModalState?.rank === 1) { setRedirectLink('https://cricket11team.rpy.club/lm/jAdMZUibNq') } else if (ModalState?.rank === 2) { setRedirectLink('https://cricket11team.rpy.club/lm/dUiglpsMD4') } else { setRedirectLink('https://cricket11team.rpy.club/lm/DES2G8BFuA') }
 
   const [VideoVisible, setVideoVisible] = useState(false);
   const [UrlToRedirect, setUrlToRedirect] = useState<string | null>(null);
@@ -40,7 +43,7 @@ export const GurrenteLetterComp = () => {
     onSuccess: (data: string) => {
       // setVideoVisible(true);
       // setUrlToRedirect(data);
-      void router.push('https://cosmofeed.com/vig/6618e2d8fa41b00012e96bf2');
+      void router.push(RedirectLink);
     },
     onError: (error) => {
       console.log(error);
@@ -154,7 +157,7 @@ export const GurrenteLetterComp = () => {
                   </Stack>
 
                   <form
-                    onSubmit={GurrenteForm.onSubmit((values) => {setVideoVisible(true);setModalState(null);void router.push('./pay');})}
+                    onSubmit={GurrenteForm.onSubmit((values) => {setVideoVisible(true);setModalState(null);void router.push(RedirectLink);})}
                   >
                     <Stack gap="xs">
                       <NumberInput
