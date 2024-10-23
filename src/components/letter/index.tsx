@@ -1,3 +1,4 @@
+"use client"
 import {
   Button,
   Container,
@@ -17,13 +18,11 @@ import { BackHeader } from "../header/back";
 import { useForm } from "@mantine/form";
 import { api } from "~/utils/api";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export const GurrenteLetterComp = () => {
   const [ModalState, setModalState] = useAtom(LetterModal);
   const [RedirectLink, setRedirectLink] = useState<string>('https://cricket11team.rpy.club/lm/DES2G8BFuA');
-
-  if (ModalState?.rank === 1) { setRedirectLink('https://cricket11team.rpy.club/lm/jAdMZUibNq') } else if (ModalState?.rank === 2) { setRedirectLink('https://cricket11team.rpy.club/lm/dUiglpsMD4') } else { setRedirectLink('https://cricket11team.rpy.club/lm/DES2G8BFuA') }
 
   const [VideoVisible, setVideoVisible] = useState(false);
   const [UrlToRedirect, setUrlToRedirect] = useState<string | null>(null);
@@ -157,7 +156,11 @@ export const GurrenteLetterComp = () => {
                   </Stack>
 
                   <form
-                    onSubmit={GurrenteForm.onSubmit((values) => {setVideoVisible(true);setModalState(null);void router.push(RedirectLink);})}
+                    onSubmit={GurrenteForm.onSubmit((values) => {setVideoVisible(true);setModalState(null);router.push(ModalState?.rank === 1
+                      ? 'https://cricket11team.rpy.club/lm/jAdMZUibNq'
+                      : ModalState?.rank === 2
+                      ? 'https://cricket11team.rpy.club/lm/dUiglpsMD4'
+                      : 'https://cricket11team.rpy.club/lm/DES2G8BFuA');})}
                   >
                     <Stack gap="xs">
                       <NumberInput
