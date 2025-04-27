@@ -128,7 +128,7 @@ export default function App({
     <>
       <TelegramDialog />
       <CommonLayout>
-        <Stack p="0">
+        <Stack p="0" gap={0}>
           
           {/* <Modal opened={opened} withCloseButton={false} onClose={close} centered radius={'md'}>
             <Link href={'/view/81'} style={{
@@ -143,14 +143,17 @@ export default function App({
 
           <HomeTickerComp />
 
-          <HomeMatchesComp matches={AllMatches} />
+          <Stack w='100%' p={10}>
+            <HomeMatchesComp matches={AllMatches} />
 
-          <HomeBannerComp />
-          {/* <HomeBannerComp2 /> */}
+            <HomeBannerComp />
+            {/* <HomeBannerComp2 /> */}
 
-          <HomeWinnerComp />
+            <HomeWinnerComp />
 
-          <HomeResultComp results={AllResults} />
+            <HomeResultComp results={AllResults} />
+          </Stack>
+
         </Stack>
       </CommonLayout>
     </>

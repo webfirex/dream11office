@@ -33,7 +33,7 @@ export const Data: DataType = {
     videoId: "LcSoZUMQ9yI",
   },
   ticker: {
-    text: "Call us for More Details : +91 8866076264 / +91 8460402761 / +91 7016432821 / +91 8799553196",
+    text: "Call us for More Details  :  +91 9999999999 / +91 9999999999 / +91 9999999999 / +91 9999999999",
   },
   winners: [
     {
