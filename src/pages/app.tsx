@@ -128,7 +128,7 @@ export default function App({
     <>
       <TelegramDialog />
       <CommonLayout>
-        <Stack p="md">
+        <Stack p="0">
           
           {/* <Modal opened={opened} withCloseButton={false} onClose={close} centered radius={'md'}>
             <Link href={'/view/81'} style={{

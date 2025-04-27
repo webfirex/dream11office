@@ -75,7 +75,7 @@ export const CommonLayout = (props: CommonLayoutProps) => {
           </AppShellHeader>
 
           <AppShellMain>
-            <Stack>{props.children}</Stack>
+            <Stack p={0}>{props.children}</Stack>
           </AppShellMain>
 
           <AppShellFooter withBorder={false}>

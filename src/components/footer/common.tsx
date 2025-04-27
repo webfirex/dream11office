@@ -15,14 +15,14 @@ const Data = {
       icon: "/icons/2.png",
     },
     {
-      name: "Refer",
-      link: "/refer",
-      icon: "/icons/3.png",
-    },
-    {
       name: "Support",
       link: "tel:8866076264",
       icon: "/icons/4.png",
+    },
+    {
+      name: "Telegram",
+      link: "",
+      icon: "/tele.webp",
     },
   ],
 };
@@ -30,10 +30,10 @@ const Data = {
 export const CommonFooter = () => {
   return (
     <>
-      <Group h="100%" justify="space-evenly" bg="#a50c0c">
+      <Group h="100%" justify="space-evenly" bg="#a50c0c" gap={'0'}>
         {Children.toArray(
           Data.links.map((link) => (
-            <>
+            <div className="w-1/4">
               <Button component={Link} href={link.link} variant="transparent">
                 <Stack gap={0} align="center">
                   <Image src={link.icon} w={"23"} />
@@ -43,7 +43,7 @@ export const CommonFooter = () => {
                   </Text>
                 </Stack>
               </Button>
-            </>
+            </div>
           ))
         )}
       </Group>
