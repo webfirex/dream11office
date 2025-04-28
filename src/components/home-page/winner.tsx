@@ -1,5 +1,5 @@
 import { Carousel } from "@mantine/carousel";
-import { Image, Stack, Title } from "@mantine/core";
+import { Flex, Image, Paper, Stack, Title } from "@mantine/core";
 import { modals } from "@mantine/modals";
 import { Children } from "react";
 import { Data } from "~/lib/data";
@@ -23,8 +23,8 @@ export const HomeWinnerComp = () => {
 
   return (
     <>
-      <Stack>
-        <Title c="red" fw={900} order={4}>
+      <Stack gap={5}>
+        <Title c="black" fw={900} order={5}>
           Our Winners
         </Title>
 
@@ -40,15 +40,25 @@ export const HomeWinnerComp = () => {
           {Children.toArray(
             Data.winners.map((winner) => (
               <Carousel.Slide>
-                <Image
+                <Paper
+                  p={5}
                   radius="md"
-                  src={winner.image}
-                  h={150}
-                  w={120}
-                  fit="cover"
-                  alt="winner"
-                  onClick={() => VideoModal(winner.video)}
-                />
+                  withBorder
+                >
+                  <Stack gap={"2px"}>
+                    <Image
+                      radius="md"
+                      src={winner.image}
+                      h={150}
+                      w={120}
+                      fit="cover"
+                      alt="winner"
+                      onClick={() => VideoModal(winner.video)}
+                    />
+                    <p style={{ fontSize: '11px', margin: "3px 0 0 0", padding: 0}}> <b>Name :</b>  Rishav Singh</p>
+                    <p style={{ fontSize: '11px', margin: "0 0 0 0", padding: 0}}> <b>Won :</b> 2 Crore</p>
+                  </Stack>
+                </Paper>
               </Carousel.Slide>
             ))
           )}

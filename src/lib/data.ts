@@ -1,6 +1,8 @@
 type WinnerType = {
   image: string;
   video: string;
+  name: string;
+  won: string;
 };
 
 type BannerType = {
@@ -39,14 +41,20 @@ export const Data: DataType = {
     {
       image: "/win3.png",
       video: "https://someshthakre.com/videos/w3.mp4",
+      name: 'Rishav Singh',
+      won: '2 crores'
     },
     {
       image: "/win1.png",
       video: "https://someshthakre.com/videos/w1.mp4",
+      name: 'Rishav Singh',
+      won: '2 crores'
     },
     {
       image: "/win2.png",
       video: "https://someshthakre.com/videos/w2.mp4",
+      name: 'Rishav Singh',
+      won: '2 crores'
     },
   ],
 };

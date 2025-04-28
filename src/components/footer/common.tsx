@@ -18,12 +18,7 @@ const Data = {
       name: "Support",
       link: "tel:8866076264",
       icon: "/icons/4.png",
-    },
-    {
-      name: "Telegram",
-      link: "",
-      icon: "/tele.webp",
-    },
+    }
   ],
 };
 
@@ -46,6 +41,17 @@ export const CommonFooter = () => {
             </div>
           ))
         )}
+        <div className="w-1/4">
+          <Button component={Link} href={""} variant="transparent">
+            <Stack gap={0} align="center">
+              <Image src={"/tele.webp"} w={"20"} />
+
+              <Text size="xs" c="white">
+                Telegram
+              </Text>
+            </Stack>
+          </Button>
+        </div>
       </Group>
     </>
   );
