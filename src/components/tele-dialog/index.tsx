@@ -16,8 +16,8 @@ export const TelegramDialog = () => {
           right: 20,
         }}
       >
-        <Link href="https://t.me/+3FMI1LP_nPZhMmJl">
-          <Image h={50} w={50} src="/tele.webp" className={"blink"} alt="Telegram"/>
+        <Link href="">
+          <Image h={50} w={50} src="/contactbtn.png" className={"blink"} alt="Telegram"/>
         </Link>
       </Dialog>
     </>

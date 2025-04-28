@@ -39,10 +39,10 @@ export const HomeResultComp = (props: HomeResultProps) => {
 
   return (
     <>
-      <Paper withBorder p="md" radius="lg" style={{ boxShadow: "0 0 20px rgba(0,0,0,0.3)" }}>
+      <Paper withBorder p="md" radius="lg">
         <Stack>
-          <Title c="red" ta="center" fw={900} order={3} style={{ borderRadius: "5px", borderBottom: "1px solid #a50c0c", padding: "5px 0 10px 0" }}>
-            Last Match Result
+          <Title c="white" ta="center" bg={"#a50c0c"} fw={900} order={4} style={{ borderRadius: "5px", border: "1px solid #00000020", padding: "5px 0 10px 0" }}>
+            Last Match Results
           </Title>
 
           <Carousel
@@ -50,14 +50,14 @@ export const HomeResultComp = (props: HomeResultProps) => {
             withControls={false}
             height="fit-content"
             slideSize="50%"
-            slideGap="xs"
+            slideGap="sm"
             align="start"
             loop
             plugins={[autoplay.current]}
           >
             {Children.toArray(
               props.results.map((resultLink) => (
-                <Carousel.Slide>
+                <Carousel.Slide p={'xs'} style={{border: '1px solid #00000020', borderRadius:'7px', margin: '0 5px'}}>
                   <AspectRatio ratio={9 / 20}>
                     <Paper
                       style={{
@@ -69,7 +69,6 @@ export const HomeResultComp = (props: HomeResultProps) => {
                         backgroundSize: "cover",
                         backgroundPosition: "center",
                         backgroundRepeat: "no-repeat",
-                        boxShadow: "0 0 20px rgba(0,0,0,0.3)"
                       }}
                       radius="md"
                       onClick={() => {
