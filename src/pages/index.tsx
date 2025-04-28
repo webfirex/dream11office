@@ -12,7 +12,7 @@ export default function Loading() {
       void router.push("/app", undefined, {
         unstable_skipClientCache: true,
       });
-    }, 10);
+    }, 5000);
   }, []);
  
   return (
@@ -21,9 +21,9 @@ export default function Loading() {
  
       <Center h="100vh" bg="#a50c0c">
         <Image
-          src="/logo-m.webp"
-          h={300}
-          w={300}
+          src="/animate.gif"
+          h={'100vh'}
+          w={'auto'}
           alt="Goat"
           fit="contain"
           className="loading-logo"
