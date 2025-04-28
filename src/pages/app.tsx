@@ -146,7 +146,7 @@ export default function App({
           <Stack w='100%' p={10}>
             <HomeMatchesComp matches={AllMatches} />
 
-            <HomeBannerComp />
+            {/* <HomeBannerComp /> */}
             {/* <HomeBannerComp2 /> */}
 
             <HomeWinnerComp />
