@@ -39,7 +39,7 @@ export const HomeResultComp = (props: HomeResultProps) => {
 
   return (
     <>
-      <Paper withBorder p="md" radius="lg">
+      <Paper withBorder p="xs" radius="lg">
         <Stack>
           <Title c="white" ta="center" bg={"#a50c0c"} fw={900} order={4} style={{ borderRadius: "5px", border: "1px solid #00000020", padding: "5px 0 10px 0" }}>
             Last Match Results
