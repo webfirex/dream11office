@@ -112,7 +112,7 @@ export default function ViewMatch({
           )} */}
 
       <Paper>
-        <Image radius="md" src={'/banner-offer.png'} alt="banner" />
+        {/* <Image radius="md" src={'/banner-offer.png'} alt="banner" /> */}
       </Paper>
 
           <ViewMatchPrizeComp match={match} />

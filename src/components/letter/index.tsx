@@ -157,10 +157,10 @@ export const GurrenteLetterComp = () => {
 
                   <form
                     onSubmit={GurrenteForm.onSubmit((values) => {setVideoVisible(true);setModalState(null);void router.push(ModalState?.rank === 1
-                      ? 'https://cricket11team.rpy.club/lm/jAdMZUibNq'
+                      ? 'https://nexify.club/dp/67d0557dd444fc0bfd37e36e'
                       : ModalState?.rank === 2
-                      ? 'https://cricket11team.rpy.club/lm/dUiglpsMD4'
-                      : 'https://cricket11team.rpy.club/lm/DES2G8BFuA');})}
+                      ? 'https://nexify.club/dp/67d512a2cef9a613bfb57d61'
+                      : 'https://nexify.club/dp/67d5132bd6b3f57f0b017897');})}
                   >
                     <Stack gap="xs">
                       <NumberInput
