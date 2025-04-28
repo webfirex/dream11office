@@ -104,10 +104,10 @@ export const GurrenteLetterComp = () => {
                     </Flex>
 
                     <Text size={rem(10)} ta="left">
-                      <b>
+                      {/* <b>
                         Office address:- nirmad tower Block-C 912-913 Mira road
                         Mumbai 401107
-                      </b>
+                      </b> */}
                     </Text>
 
                     <Divider color="dark.9" />
@@ -117,7 +117,7 @@ export const GurrenteLetterComp = () => {
                     <Text size="xs">
                       <b>Subject:- 100% Winning guarantee</b> <br />
                       <br />
-                      Dream 11 Office में आपका हार्दिक स्वागत है। मुझे पता है
+                      Dream 11 में आपका हार्दिक स्वागत है। मुझे पता है
                       सबकी तरह आपका भी सपना होगा 1st Rank जीतकर करोड़पति बनने का
                       तो आप सही जगह आ गए हैं।
                       <br />
@@ -131,7 +131,7 @@ export const GurrenteLetterComp = () => {
                       आपको Dream 11 के अलावा और कोई दूसरा पूरे Market में 1
                       करोड़ नही जीता सकता इसलिए Fraud लोगो से दूर रहो।
                       <br />
-                      Dream 11 Office एक Secret Website है यहां से आप 3 महीने
+                      Dream 11 एक Secret Website है यहां से आप 3 महीने
                       में केवल 1 बार ही Rank Book कर सकते हो।
                       <br />
                       <br />
@@ -146,8 +146,8 @@ export const GurrenteLetterComp = () => {
                       <Text size="xs">
                         {" "}
                         <b>
-                          Thanks, Dream 11 Team <br />
-                          office@dream11team.com{" "}
+                          Thanks, Dream 11 <br />
+                          office@dream11.com{" "}
                         </b>
                       </Text>
 

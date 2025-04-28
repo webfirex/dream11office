@@ -5,7 +5,7 @@ export const ViewMatchHeroComp = (props: { banner: string }) => {
     <Stack>
       <AspectRatio ratio={16 / 9}>
         <Image
-          src="/x.png"
+          src="/bgx.jpg"
           alt="Header Logo"
           style={{
             borderBottomLeftRadius: "var(--mantine-radius-xl)",
@@ -22,7 +22,7 @@ export const ViewMatchHeroComp = (props: { banner: string }) => {
         alt="Match Banner"
         radius="lg"
         style={{
-          zIndex: 100,
+          zIndex: 0,
         }}
       />
     </Stack>

@@ -12,7 +12,7 @@ export const BackHeader = (props: BackHeaderProps) => {
 
   return (
     <>
-      <Group px="md" bg="#fff" h={props.h ?? "100%"} style={{boxShadow: '0 0 10px #00000050'}}>
+      <Group px="md" bg="#fff" h={props.h ?? "100%"} style={{boxShadow: '0 0 10px #00000050', zIndex: '10000'}}>
         <ActionIcon
           variant="transparent"
           color="#a50c0c"
