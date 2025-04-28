@@ -56,7 +56,7 @@ export const HomeWinnerComp = () => {
                       onClick={() => VideoModal(winner.video)}
                     />
                     <p style={{ fontSize: '11px', margin: "3px 0 0 0", padding: 0}}> <b>Name :</b>  Rishav Singh</p>
-                    <p style={{ fontSize: '11px', margin: "0 0 0 0", padding: 0, width: '100%', backgroundColor: '#f40000'}}> <b>Won :</b> 2 Crore</p>
+                    <p style={{ fontSize: '11px', margin: "0 0 0 0", padding: 0, width: '100%', backgroundColor: '#a50c0c', color: 'white', borderRadius: '4px', textAlign: 'center'}}> <b>2 Crore Winner</b></p>
                   </Stack>
                 </Paper>
               </Carousel.Slide>
