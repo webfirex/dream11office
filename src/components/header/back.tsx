@@ -12,10 +12,10 @@ export const BackHeader = (props: BackHeaderProps) => {
 
   return (
     <>
-      <Group px="md" bg="#a50c0c" h={props.h ?? "100%"}>
+      <Group px="md" bg="#fff" h={props.h ?? "100%"} style={{boxShadow: '0 0 10px #00000050'}}>
         <ActionIcon
           variant="transparent"
-          color="white"
+          color="#a50c0c"
           onClick={() => (props.onBack ? props.onBack() : router.back())}
         >
           <IconArrowLeft size={18} />

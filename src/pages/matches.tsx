@@ -67,7 +67,7 @@ export default function Home() {
     <>
       <TelegramDialog />
       <CommonLayout header={<BackHeader />} p="md">
-        <MatchBannerComp />
+        {/* <MatchBannerComp /> */}
 
         <MatchListComp />
       </CommonLayout>

@@ -19,8 +19,8 @@ export const MatchListComp = () => {
 
   return (
     <>
-      <Stack>
-        <Title c="red" order={4}>
+      <Stack gap={'xs'}>
+        <Title c="black" order={5}>
           Upcoming Matches
         </Title>
 
