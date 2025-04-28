@@ -1,12 +1,38 @@
+'use client'
 import { Image } from "@mantine/core";
 import Link from "next/link";
+import Autoplay from 'embla-carousel-autoplay';
+import { Carousel } from '@mantine/carousel';
+import { useRef } from "react";
 // import { Data } from "~/lib/data";
 
-export const HomeHeroComp = () => {
+function Slide({link, src}: {link: string; src: string}) {
   return (
-    <Link href={'/view/81'} className="w-full">
-      <Image src={'https://i.ibb.co/5X6w1t7T/img-1.png'} className={'w-full'} />
-      {/* <iframe width="560" height="315" className="w-full h-auto aspect-video max-w-[700px]" src="https://www.youtube.com/embed/EnMr5NscBhg?si=TqLRvoSo-fWBEf2y" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe> */}
-    </Link> 
+  <Link href={link} className="w-full" style={{ height: "fit-content" }}>
+    <Image src={src} className={'w-full'} />
+  </Link>
+  )
+}
+
+export const HomeHeroComp = () => {
+  const autoplay = useRef(Autoplay({ delay: 4000 }));
+  return (
+    <Carousel
+      withControls={false}
+      loop
+      plugins={[autoplay.current]}
+      onMouseEnter={autoplay.current.stop}
+      onMouseLeave={autoplay.current.reset}
+    >
+      <Carousel.Slide style={{ height: "fit-content" }}>
+        <Slide link="/view/81" src="https://i.ibb.co/5X6w1t7T/img-1.png" />
+      </Carousel.Slide>
+      <Carousel.Slide style={{ height: "fit-content" }}>
+        <Slide link="/view/81" src="https://i.ibb.co/5X6w1t7T/img-1.png" />
+      </Carousel.Slide>
+      <Carousel.Slide style={{ height: "fit-content" }}>
+        <Slide link="/view/81" src="https://i.ibb.co/5X6w1t7T/img-1.png" />
+      </Carousel.Slide>
+    </Carousel>
   )
 };
