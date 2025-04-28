@@ -41,7 +41,8 @@ export const MatchListComp = () => {
             <Stack>
               {Children.toArray(
                 ListApi.data.matches.map((match) => (
-                  <Paper
+                  <Paper 
+          
                     p="xs"
                     radius="md"
                     withBorder
