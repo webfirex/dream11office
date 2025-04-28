@@ -143,7 +143,7 @@ export default function App({
 
           <HomeTickerComp />
 
-          <Stack w='100%' p={10}>
+          <Stack w='100%' p={10} gap={"md"} pt={"lg"}>
             <HomeMatchesComp matches={AllMatches} />
 
             {/* <HomeBannerComp /> */}
