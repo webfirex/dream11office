@@ -22,6 +22,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { useEffect } from "react";
 import useDocumentOnLoad from "./useDocLoad";
 import Link from "next/link";
+import { MatchListComp } from "~/components/home-page/list";
    
 const CommonLayout = dynamic( 
   () => import("~/components/layout/common").then((mod) => mod.CommonLayout),
@@ -150,6 +151,8 @@ export default function App({
             {/* <HomeBannerComp2 /> */}
 
             <HomeWinnerComp />
+            
+            <MatchListComp />
 
             <HomeResultComp results={AllResults} />
           </Stack>

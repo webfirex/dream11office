@@ -81,7 +81,7 @@ export const HomeMatchesComp = (props: HomeMatchesCompProps) => {
                         </Text>
                       </Stack>
 
-                      <Button size="compact-xs" radius="sm">
+                      <Button size="compact-xs" radius="sm" className="blink">
                         <Text size="xs" fw="bold" px={"xs"} py={"sm"}>
                           Boost 1st Rank
                         </Text>

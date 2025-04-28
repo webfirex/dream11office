@@ -110,3 +110,19 @@ body {
       scale: 0.9;
   }
 }
+
+
+.a-scaleBtn {
+  animation: scalebtn 2s linear infinite;
+}
+@keyframes scalebtn {
+  0% {
+      scale: 0.9;
+  }
+  50% {
+      scale: 1;
+  }
+  100% {
+      scale: 0.9;
+  }
+}
