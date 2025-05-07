@@ -22,6 +22,7 @@ export const HomeHeroComp = () => {
       loop
       plugins={[autoplay.current]}
       onMouseEnter={autoplay.current.stop}
+      style={{borderRadius: '10px', overflow: 'hidden'}}
       onMouseLeave={autoplay.current.reset}
     >
       <Carousel.Slide style={{ height: "fit-content" }}>

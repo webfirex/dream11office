@@ -140,19 +140,20 @@ export default function App({
             </Link>
           </Modal> */}
 
-          <HomeHeroComp />
-
-          <HomeTickerComp />
 
           <Stack w='100%' p={10} gap={"md"} pt={"lg"}>
+            <HomeHeroComp />
+
+            <HomeTickerComp />
+
             <HomeMatchesComp matches={AllMatches} />
 
             {/* <HomeBannerComp /> */}
-            {/* <HomeBannerComp2 /> */}
+            <HomeBannerComp2 />
 
             <HomeWinnerComp />
             
-            <MatchListComp />
+            {/* <MatchListComp /> */}
 
             <HomeResultComp results={AllResults} />
           </Stack>

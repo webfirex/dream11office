@@ -5,8 +5,8 @@ import { Data } from "~/lib/data";
 export const HomeBannerComp2 = () => {
   return (
     <>
-      <Paper component={Link} href={'https://t.me/+3FMI1LP_nPZhMmJl'}>
-        <Image radius="md" src={'/mini-banner-3.png'} alt="banner" />
+      <Paper component={Link} href={''}>
+        <Image radius="md" src={'/slide1.png'} alt="banner" />
       </Paper>
     </>
   );
