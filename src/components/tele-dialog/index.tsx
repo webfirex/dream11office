@@ -17,7 +17,7 @@ export const TelegramDialog = () => {
         }}
       >
         <Link href="">
-          <Image h={50} w={50} src="/contactbtn.png" className={"blink"} alt="Telegram"/>
+          <Image h={50} w={50} src="https://img.favpng.com/5/2/4/whatsapp-logo-icon-png-png-favpng-2afidVbQGYeKuKGEPQEa56myz.jpg" className={"blink"} alt="Telegram" radius={'100%'}/>
         </Link>
       </Dialog>
     </>
