@@ -1,11 +1,14 @@
 'use client'
 import { Button, Group, Image, Title } from "@mantine/core";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Cookies from 'js-cookie';
 
 export const CommonHeader = () => {
   const [sidebar, setSidebar] = useState(false);
   const [file, setFile] = useState<File | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const [profPic, setProfPic] = useState('https://i.ibb.co/z7fBxBH/pofpic-451687-1727852968461.png');
 
   const handleSelectImage = async () => {
     try {
@@ -47,23 +50,21 @@ export const CommonHeader = () => {
     
       const data = await response.json();
 
-      const updateUserData = JSON.stringify({phone: '', url: data.url});
-    
-      if (response.ok && data.url) {
-        const response = await fetch('/api/userData/updateImage', {
-          method: 'POST',
-          body: updateUserData,
-        });
-      
-        await response.json();
-        setIsSubmitting(false);
-      } else {
-        console.error('File upload failed');
-      } 
+      if (data.url) {
+        Cookies.set('profPic', data.url, {expires: 90, path: '/'})
+        setProfPic(data.url);
+      }
     }
 
     setIsSubmitting(false);
   };
+
+  useEffect(() => {
+    const pic = Cookies.get('profPic')
+    if (pic) {
+      setProfPic(pic)
+    }
+  }, [])
 
   return (
     <>
@@ -71,7 +72,7 @@ export const CommonHeader = () => {
         <Image src="/h-logo-w.png" alt="Header Logo" h={50} />
         <div style={{display: 'flex', gap: '5px', alignItems: 'center', justifyContent: 'end', height: '100%'}}>
           <Image src="/contactus.png" alt="Header Logo" h={40} />
-          <Image src={ !sidebar ? "https://i.ibb.co/z7fBxBH/pofpic-451687-1727852968461.png" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGO8tu34AXoBHkvfWOS8WTAvtf42V2tHomBw&s" } alt="Header Logo" h={40} w={40} radius={'100%'} onClick={() => {sidebar ? setSidebar(false) : setSidebar(true)}} style={{cursor: 'pointer'}} />
+          <Image src={ !sidebar ? profPic : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGO8tu34AXoBHkvfWOS8WTAvtf42V2tHomBw&s" } alt="Header Logo" h={40} w={40} radius={'100%'} onClick={() => {sidebar ? setSidebar(false) : setSidebar(true)}} style={{cursor: 'pointer'}} />
         </div>
         {/* <Title order={4} c={"#F40000"}>Dream 11</Title> */}
       </Group>
