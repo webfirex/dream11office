@@ -61,8 +61,18 @@ export const CommonHeader = () => {
 
   useEffect(() => {
     const pic = Cookies.get('profPic')
+    const name = Cookies.get('uName')
+    const phone = Cookies.get('uPhone')
+
+
     if (pic) {
       setProfPic(pic)
+    }
+    if (name) {
+      setProfPic(name)
+    }
+    if (phone) {
+      setProfPic(phone)
     }
   }, [])
 

@@ -126,3 +126,45 @@ body {
       scale: 0.9;
   }
 }
+
+.cricketBallImg {
+  position: absolute;
+  bottom: -25%;
+  scale: 0.05;
+  animation: ballAnimation 1s linear 1 forwards;
+}
+
+.authPageForm {
+  opacity: 0;
+  animation: authFormAnimation 1s linear 1 forwards;
+}
+
+@keyframes ballAnimation {
+  0% {
+      scale: 0.05;
+      rotate: 0deg;
+      bottom: -25%;
+  }
+  50% {
+      scale: 0.5;
+      rotate: 180deg;
+      bottom: 25%;
+  }
+  100% {
+      scale: 1.5;
+      rotate: 360deg;
+      bottom: 75%;
+  }
+}
+
+@keyframes authFormAnimation {
+  0% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
