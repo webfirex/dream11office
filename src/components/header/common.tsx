@@ -79,7 +79,7 @@ export const CommonHeader = () => {
       {sidebar && <div style={{display: 'flex', position: 'fixed', backgroundColor: '#fff', right: '0', padding: '14px', height: '100%', boxShadow: '0 10px 10px #00000050', width: '70%', flexDirection: 'column', gap: '14px' }}>
         <h1 style={{margin: '0', fontSize: '22px'}}>Hi, John Doe</h1>
         <div style={{display: 'flex', gap: '10px', justifyContent: 'start'}}>
-          <Image src={"https://i.ibb.co/z7fBxBH/pofpic-451687-1727852968461.png"} alt="Header Logo" h={50} w={50} radius={'100%'} style={{cursor: 'pointer'}} onClick={() => handleSelectImage()} />
+          <Image src={profPic} alt="Header Logo" h={50} w={50} radius={'100%'} style={{cursor: 'pointer'}} onClick={() => handleSelectImage()} />
           <div style={{display: 'flex', gap: '5px', justifyContent: 'start', flexDirection: 'column'}}>
             <p style={{ margin: '0', fontSize: '14px'}}>Name: John Doe</p>
             <p style={{ margin: '0', fontSize: '14px'}}>Phone: +91 9999999999</p>
