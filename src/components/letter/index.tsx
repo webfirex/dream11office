@@ -171,7 +171,7 @@ export const GurrenteLetterComp = () => {
                       आपको Dream 11 के अलावा और कोई दूसरा पूरे Market में 1
                       करोड़ नही जीता सकता इसलिए Fraud लोगो से दूर रहो।
                       <br />
-                      Dream 11 एक Secret Website है यहां से आप 3 महीने
+                      Dream 11 Head Office एक App है यहां से आप 3 महीने
                       में केवल 1 बार ही Rank Book कर सकते हो।
                       <br />
                       <br />
