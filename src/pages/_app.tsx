@@ -12,6 +12,7 @@ import "~/styles/globals.css";
 import { type AppProps, type AppType } from "next/app";
 import { createTheme } from "@mantine/core";
 import { api } from "~/utils/api";
+import { useRouter } from "next/router";
 
 
 const MantineProvider = dynamic(
@@ -38,6 +39,10 @@ const theme = createTheme({
 });
 
 const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
+  const router = useRouter();
+  const pathname = router.pathname;
+
+  console.log(pathname)
 
   return (
     <>
@@ -49,6 +54,20 @@ const MyApp: AppType = ({ Component, pageProps }: AppProps) => {
         />
         
         <link rel="icon" href="/logo.svg" />
+
+        {
+          pathname !== '/app' && (
+            <style
+              dangerouslySetInnerHTML={{
+                __html: `
+                  #voiceflow-chat {
+                    display: none !important;
+                  }
+                `,
+              }}
+            />
+          )
+        }
 
       </Head>
 
