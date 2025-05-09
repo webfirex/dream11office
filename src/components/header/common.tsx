@@ -87,7 +87,9 @@ export const CommonHeader = () => {
           {/* <Title order={4} c={"#fff"}>Head Office</Title> */}
           <Image src="/logoxx.png" alt="Header Logo" h={25} ml={2} />
         </div>
-        <Image src="/contactusbtn.png" h={30} component={Link} href={'https://t.me/+uAxa2gBEHjMwNGE1'} />
+        <Link  href={'https://t.me/+uAxa2gBEHjMwNGE1'}><Image src="/contactusbtn.png" h={30} alt="" />
+        </Link>
+        
       </Group>
       {sidebar && <div style={{display: 'flex', position: 'fixed', backgroundColor: '#fff', left: '0', padding: '14px', height: '100%', boxShadow: '0 10px 10px #00000050', width: '70%', flexDirection: 'column', gap: '14px' }}>
         {/* <Image src="/h-logo-w.png" alt="Header Logo" w={125} ml={-10} mt={-15} mb={-15} style={{alignSelf: 'start'}} />
