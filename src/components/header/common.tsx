@@ -83,7 +83,8 @@ export const CommonHeader = () => {
       <Group h="100%" px="xs" bg="#a50c0c" display={"flex"} justify={"space-between"} style={{ boxShadow: '0 0 10px #00000050', borderTop: '1px', borderColor: '#00000050', flexWrap: 'nowrap' }}>
         <div style={{display: 'flex', gap: '5px', alignItems: 'center', justifyContent: 'start', height: '100%'}}>
           <Image src={ !sidebar ? profPic : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGO8tu34AXoBHkvfWOS8WTAvtf42V2tHomBw&s" } alt="Header Logo" h={35} w={35} radius={'100%'} onClick={() => {sidebar ? setSidebar(false) : setSidebar(true)}} style={{cursor: 'pointer'}} />
-          <Title order={4} c={"#fff"}>Head Office</Title>
+          {/* <Title order={4} c={"#fff"}>Head Office</Title> */}
+          <Image src="/logoxx.png" alt="Header Logo" h={25} ml={2} />
         </div>
         <Image src="/contactusbtn.png" alt="Header Logo" h={30} />
       </Group>

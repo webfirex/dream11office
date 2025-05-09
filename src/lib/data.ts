@@ -35,7 +35,7 @@ export const Data: DataType = {
     videoId: "LcSoZUMQ9yI",
   },
   ticker: {
-    text: "Call us for More Details  :  +91 9999999999 / +91 9999999999 / +91 9999999999 / +91 9999999999",
+    text: "To Contact us Search on Telegram @Realdream11office",
   },
   winners: [
     {

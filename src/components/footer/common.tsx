@@ -42,7 +42,7 @@ export const CommonFooter = () => {
           ))
         )}
         <div className="w-1/4">
-          <Button component={Link} href={""} variant="transparent">
+          <Button component={Link} href={"https://t.me/+uAxa2gBEHjMwNGE1"} variant="transparent">
             <Stack gap={0} align="center">
               <Image src={"/tele.webp"} w={"18"} my={1} />
 
