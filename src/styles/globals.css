@@ -168,3 +168,8 @@ body {
       opacity: 1;
   }
 }
+
+#voiceflow-chat .vfrc-widget ._1wkq7nf9 {
+  bottom: 55px;
+  right: 10px;
+}

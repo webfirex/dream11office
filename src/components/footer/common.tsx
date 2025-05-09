@@ -44,7 +44,7 @@ export const CommonFooter = () => {
         <div className="w-1/4">
           <Button component={Link} href={""} variant="transparent">
             <Stack gap={0} align="center">
-              <Image src={"/tele.webp"} w={"20"} />
+              <Image src={"/tele.webp"} w={"18"} my={1} />
 
               <Text size="xs" c="white">
                 Telegram

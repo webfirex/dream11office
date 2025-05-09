@@ -127,7 +127,7 @@ export default function App({
   
   return (
     <>
-      <TelegramDialog />
+      {/* <TelegramDialog /> */}
       <CommonLayout>
         <Stack p="0" gap={0}>
           
