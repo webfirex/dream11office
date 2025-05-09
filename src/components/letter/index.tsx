@@ -36,6 +36,7 @@ export const GurrenteLetterComp = () => {
   const [c, setC] = useState('https://nexify.club/dp/67d5132bd6b3f57f0b017897');
   
   useEffect(() => {
+
     const name = Cookies.get('uName')
     const phone = Cookies.get('uPhone')
 
@@ -45,6 +46,7 @@ export const GurrenteLetterComp = () => {
     if (phone) {
       setPhone(phone)
     }
+
   }, [])
 
   const router = useRouter();
@@ -211,7 +213,6 @@ export const GurrenteLetterComp = () => {
                       <NumberInput
                         leftSection={<Text size="md">+91</Text>}
                         value={Number(phone)}
-                        // readOnly
                         variant="filled"
                         size="md"
                         radius="md"
