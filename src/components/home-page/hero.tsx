@@ -1,4 +1,5 @@
 'use client'
+import { useEffect, useState } from "react";
 import { Image } from "@mantine/core";
 import Link from "next/link";
 import Autoplay from 'embla-carousel-autoplay';
@@ -16,6 +17,21 @@ function Slide({link, src}: {link: string; src: string}) {
 
 export const HomeHeroComp = () => {
   const autoplay = useRef(Autoplay({ delay: 4000 }));
+  const [carousel, setCarousel] = useState<{img: string, link: string}[]>([])
+
+  const getContent = async () => {
+
+    const response = await fetch(`https://admin.book1strank.com/11/cms.php?action=get&type=carousel`);
+  
+    const data = await response.json();
+
+    setCarousel(data)
+  }
+  
+  useEffect(() => {
+    getContent()
+  }, [])
+
   return (
     <Carousel
       withControls={false}
@@ -25,15 +41,11 @@ export const HomeHeroComp = () => {
       style={{borderRadius: '10px', overflow: 'hidden'}}
       onMouseLeave={autoplay.current.reset}
     >
-      <Carousel.Slide style={{ height: "fit-content" }}>
-        <Slide link="/view/81" src="https://i.ibb.co/5X6w1t7T/img-1.png" />
+      {carousel.map((item, index) => (
+      <Carousel.Slide style={{ height: "fit-content" }} key={index}>
+        <Slide link={item?.link} src={item?.img} />
       </Carousel.Slide>
-      <Carousel.Slide style={{ height: "fit-content" }}>
-        <Slide link="/view/81" src="https://i.ibb.co/5X6w1t7T/img-1.png" />
-      </Carousel.Slide>
-      <Carousel.Slide style={{ height: "fit-content" }}>
-        <Slide link="/view/81" src="https://i.ibb.co/5X6w1t7T/img-1.png" />
-      </Carousel.Slide>
+      ))}
     </Carousel>
   )
 };

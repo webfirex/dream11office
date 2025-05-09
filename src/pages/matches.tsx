@@ -65,7 +65,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 export default function Home() {
   return (
     <>
-      <TelegramDialog />
+      {/* <TelegramDialog /> */}
       <CommonLayout header={<BackHeader />} p="md">
         {/* <MatchBannerComp /> */}
 

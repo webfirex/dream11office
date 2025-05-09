@@ -11,7 +11,7 @@ import {
   rem,
 } from "@mantine/core";
 import Link from "next/link";
-import { Children } from "react";
+import { Children, useEffect, useState } from "react";
 import { api } from "~/utils/api";
 
 export const MatchListComp = () => {
@@ -19,7 +19,7 @@ export const MatchListComp = () => {
 
   return (
     <>
-      <Stack gap={'xs'}>
+      <Stack gap={'xs'} mb={'100px'}>
         <Title c="black" order={5}>
           Upcoming Matches
         </Title>

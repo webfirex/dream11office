@@ -19,6 +19,7 @@ import { useForm } from "@mantine/form";
 import { api } from "~/utils/api";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import Cookies from 'js-cookie';
 
 export const GurrenteLetterComp = () => {
   const [ModalState, setModalState] = useAtom(LetterModal);
@@ -26,6 +27,25 @@ export const GurrenteLetterComp = () => {
 
   const [VideoVisible, setVideoVisible] = useState(false);
   const [UrlToRedirect, setUrlToRedirect] = useState<string | null>(null);
+
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+
+  const [a, setA] = useState('https://nexify.club/dp/67d0557dd444fc0bfd37e36e');
+  const [b, setB] = useState('https://nexify.club/dp/67d512a2cef9a613bfb57d61');
+  const [c, setC] = useState('https://nexify.club/dp/67d5132bd6b3f57f0b017897');
+  
+  useEffect(() => {
+    const name = Cookies.get('uName')
+    const phone = Cookies.get('uPhone')
+
+    if (name) {
+      setName(name)
+    }
+    if (phone) {
+      setPhone(phone)
+    }
+  }, [])
 
   const router = useRouter();
 
@@ -48,6 +68,24 @@ export const GurrenteLetterComp = () => {
       console.log(error);
     },
   });
+
+  const getContent = async () => {
+
+    const response = await fetch(`https://admin.book1strank.com/11/cms.php?action=get&type=match&id=${ModalState?.match.id}`);
+  
+    const data = await response.json();
+
+    if (data['1st'] && data['2nd'] && data['3rd'] ) {
+      setA(data['1st'])
+      setB(data['2nd'])
+      setC(data['3rd'])
+    }
+
+  }
+  
+  useEffect(() => {
+    getContent()
+  }, [ModalState])
 
   return (
     <Modal
@@ -156,15 +194,24 @@ export const GurrenteLetterComp = () => {
                   </Stack>
 
                   <form
-                    onSubmit={GurrenteForm.onSubmit((values) => {setVideoVisible(true);setModalState(null);void router.push(ModalState?.rank === 1
-                      ? 'https://nexify.club/dp/67d0557dd444fc0bfd37e36e'
+                    onSubmit={
+                      GurrenteForm.onSubmit((values) => {
+                        
+                        setVideoVisible(true);
+                        setModalState(null);
+                        void router.push(ModalState?.rank === 1
+                      ? `${a}?name=${name}&phone=${phone}&pay=auto`
                       : ModalState?.rank === 2
-                      ? 'https://nexify.club/dp/67d512a2cef9a613bfb57d61'
-                      : 'https://nexify.club/dp/67d5132bd6b3f57f0b017897');})}
+                      ? `${b}?name=${name}&phone=${phone}&pay=auto`
+                      : `${c}?name=${name}&phone=${phone}&pay=auto`);
+
+                    })}
                   >
                     <Stack gap="xs">
                       <NumberInput
                         leftSection={<Text size="md">+91</Text>}
+                        value={Number(phone)}
+                        // readOnly
                         variant="filled"
                         size="md"
                         radius="md"

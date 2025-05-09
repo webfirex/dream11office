@@ -52,7 +52,7 @@ export const ViewMatchPrizeComp = (props: { match: MatchType }) => {
   const setModalState = useSetAtom(LetterModal);
 
   return (
-    <Stack gap="md">
+    <Stack gap="md" pb={'100px'}>
       {Children.toArray(
         props.match.ranks.map((prize, rank) => (
           <Paper
