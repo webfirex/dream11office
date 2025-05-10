@@ -1,8 +1,9 @@
 'use client'
-import { Button, Divider, Group, Image, Title } from "@mantine/core";
+import { Button, Divider, FileInput, Group, Image, Title } from "@mantine/core";
 import { useEffect, useState } from "react";
 import Cookies from 'js-cookie';
 import Link from "next/link";
+import { IconPhotoScan } from "@tabler/icons-react";
 
 export const CommonHeader = () => {
   const [sidebar, setSidebar] = useState(false);
@@ -15,51 +16,25 @@ export const CommonHeader = () => {
 
   const handleSelectImage = async () => {
     try {
-      const input = document.createElement("input");
-      input.type = "file";
-      input.accept = "image/png, image/jpeg";
-      input.style.display = "none";
-  
-      input.onchange = (event: Event) => {
-        const target = event.target as HTMLInputElement;
-        if (target.files && target.files.length > 0) {
-          const selectedFile: any = target.files[0];
-          setFile(selectedFile); // Update state with selected file
-          handleSubmitx(); // Call another function
-        }
-      };
-  
-      document.body.appendChild(input);
-      input.click();
-      document.body.removeChild(input);
-    } catch (error) {
-      console.error("Error selecting image:", error);
-    }
-  };
-
-  const handleSubmitx = async () => {
-    if (file) {
-      setIsSubmitting(true);
-      
       const formData = new FormData();
-      formData.append('file', file);
+      if (file) {formData.append("image", file)}
+      formData.append("id", phone);
 
-      console.log('sending 1')
-      
-      const response = await fetch('https://app.cricket11team.com/api/uploadUserImages', {
+      const response = await fetch('https://api.imgbb.com/1/upload?key=3f6e83c8546b982727ada71053dd995c', {
         method: 'POST',
         body: formData,
       });
-    
-      const data = await response.json();
 
-      if (data.url) {
-        Cookies.set('profPic', data.url, {expires: 90, path: '/'})
-        setProfPic(data.url);
+      const imgbbData = await response.json();
+
+      if (imgbbData.data.url) {
+        Cookies.set('profPic', imgbbData.data.url, {expires: 90, path: '/'})
+        setProfPic(imgbbData.data.url);
       }
-    }
 
-    setIsSubmitting(false);
+    } catch (error) {
+      console.error("Error selecting image:", error);
+    }
   };
 
   useEffect(() => {
@@ -96,12 +71,14 @@ export const CommonHeader = () => {
         <Divider variant="solid" content="or" c={"dark"} w={'100%'} my={'5px'} labelPosition="center" /> */}
         <h1 style={{margin: '0', fontSize: '20px'}}>Hi, {name}</h1>
         <div style={{display: 'flex', gap: '10px', justifyContent: 'start'}}>
-          <Image src={profPic} alt="Header Logo" h={45} w={45} radius={'100%'} style={{cursor: 'pointer'}} onClick={() => handleSelectImage()} />
+          <Image src={profPic} alt="Header Logo" h={45} w={45} radius={'100%'} style={{cursor: 'pointer'}} />
           <div style={{display: 'flex', gap: '5px', justifyContent: 'start', flexDirection: 'column'}}>
             <p style={{ margin: '0', fontSize: '12px'}}>Name: {name}</p>
             <p style={{ margin: '0', fontSize: '12px'}}>Phone: +91{phone}</p>
           </div>
         </div>
+        <FileInput accept="image/png,image/jpeg" rightSection={<IconPhotoScan size={18} stroke={1.5} />} value={file} onChange={setFile} className="mt-2" placeholder={'Upload Profile Pic'} />
+        <Button variant="filled" color="green" disabled={file ? false : true}>Upload Pic</Button>
         <Button variant="filled" color="red">Logout</Button>
       </div> }
     </>
