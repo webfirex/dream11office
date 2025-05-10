@@ -78,7 +78,7 @@ export const CommonHeader = () => {
           </div>
         </div>
         <FileInput accept="image/png,image/jpeg" rightSection={<IconPhotoScan size={18} stroke={1.5} />} value={file} onChange={setFile} className="mt-2" placeholder={'Upload Profile Pic'} />
-        <Button variant="filled" color="green" disabled={file ? false : true}>Upload Pic</Button>
+        <Button variant="filled" color="green" disabled={file ? false : true} onClick={() => {handleSelectImage()}}>Upload Pic</Button>
         <Button variant="filled" color="red">Logout</Button>
       </div> }
     </>
